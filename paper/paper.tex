@@ -23,7 +23,8 @@ style=authoryear-comp,
 \addbibresource{RMbibliography.bib}
 \onehalfspacing
 \parindent=0pt
-
+\usepackage{pagecolor}
+\pagecolor{white}
 \begin{document}
 
 \begin{titlepage}
@@ -63,13 +64,13 @@ style=authoryear-comp,
 
 \section{Introduction}
 
-Regression models are a fundamental tool in statistical modeling, enabling the prediction of a dependent variable based on a set of independent variables. However, in modern applications, datasets often exhibit \textbf{high-dimensionality}, where the number of predictors (\( p \)) is significantly larger than the number of observations (\( n \)). This scenario, commonly referred to as the \textbf{curse of dimensionality}, poses significant challenges to traditional regression methods, particularly \textbf{Ordinary Least Squares (OLS) regression}.
+Regression models are a fundamental tool in statistical modeling, enabling the prediction of a dependent variable based on a set of independent variables. However, in modern applications, datasets often exhibit high-dimensionality, where the number of predictors (\( p \)) is significantly larger than the number of observations (\( n \)). This scenario, commonly referred to as the curse of dimensionality, poses significant challenges to traditional regression methods, particularly Ordinary Least Squares (OLS) regression.
 
-One of the primary concerns in high-dimensional regression is \textbf{multicollinearity}—a situation where predictor variables are highly correlated. Multicollinearity leads to inflated standard errors, unstable coefficient estimates, and difficulties in interpreting model parameters. Additionally, high-dimensional models tend to overfit the training data, resulting in poor generalization to unseen observations. Computational complexity further exacerbates these challenges, making it difficult to estimate model parameters efficiently.
-To address these issues, researchers have developed \textbf{dimension reduction techniques} that aim to transform high-dimensional predictor spaces into lower-dimensional representations while preserving essential information. Two widely used techniques in this context are \textbf{Principal Component Regression (PCR)} and \textbf{Partial Least Squares (PLS)}. These methods construct new predictor variables, referred to as components, that capture the most relevant variation in the dataset.
-The use of \textbf{PCR and PLS} is prevalent in various disciplines, including \textbf{chemometrics, finance, genomics, and environmental science}, where datasets often contain a large number of correlated predictors. While both methods offer solutions to the high-dimensional regression problem, they differ in their approach, underlying assumptions, and effectiveness in different scenarios.
+One of the primary concerns in high-dimensional regression is multicollinearity—a situation where predictor variables are highly correlated. Multicollinearity leads to inflated standard errors, unstable coefficient estimates, and difficulties in interpreting model parameters. Additionally, high-dimensional models tend to overfit the training data, resulting in poor generalization to unseen observations. Computational complexity further exacerbates these challenges, making it difficult to estimate model parameters efficiently.
+To address these issues, researchers have developed dimension reduction techniques that aim to transform high-dimensional predictor spaces into lower-dimensional representations while preserving essential information. Two widely used techniques in this context are Principal Component Regression (PCR) and Partial Least Squares (PLS). These methods construct new predictor variables, referred to as components, that capture the most relevant variation in the dataset.
+The use of PCR and PLS is prevalent in various disciplines, including chemometrics, finance, genomics, and environmental science, where datasets often contain a large number of correlated predictors. While both methods offer solutions to the high-dimensional regression problem, they differ in their approach, underlying assumptions, and effectiveness in different scenarios.
 
-This paper provides a comprehensive analysis of  \textbf{Principal Component Regression (PCR)} and \textbf{Partial Least Squares (PLS)}, focusing on their theoretical foundations, practical implementations, and empirical performance evaluation across various regression settings. Specifically, in Section 2 we investigate the mathematical principles underlying these methods, highlighting their similarities and differences in handling multicollinearity and dimensionality reduction. A key focus in Section 3 is on understanding the \textbf{bias-variance trade-off} by performing a detailed \textbf{Mean Squared Error (MSE) decomposition} of regression coefficients, as well as evaluating predictive performance through \textbf{Cross-Validation (CV) MSE}. The study systematically compares these methods in different scenarios. To further assess model stability and generalization ability, a Monte Carlo simulation is conducted using synthetic datasets, allowing for an in-depth examination of performance under varying levels of correlation. Additionally, in Section 4 both PCR and PLS are applied to real-world regression problems, including \textbf{Near-Infrared (NIR) Spectroscopy for Moisture Prediction}, to evaluate their practical utility and interpretability. Finally, in Section 5 we discuss the strengths and weaknesses of each method, providing guidance on when to prefer PCR over PLS (or vice versa) and exploring potential hybrid approaches that integrate the advantages of both techniques.
+This paper provides a comprehensive analysis of  Principal Component Regression (PCR) and Partial Least Squares (PLS), focusing on their theoretical foundations, practical implementations, and empirical performance evaluation across various regression settings. Specifically, in Section 2 we investigate the mathematical principles underlying these methods, highlighting their similarities and differences in handling multicollinearity and dimensionality reduction. A key focus in Section 3 is on understanding the bias-variance trade-off by performing a detailed Mean Squared Error (MSE) decomposition of regression coefficients, as well as evaluating predictive performance through Cross-Validation (CV) MSE. The study systematically compares these methods in different scenarios. To further assess model stability and generalization ability, a Monte Carlo simulation is conducted using synthetic datasets, allowing for an in-depth examination of performance under varying levels of correlation. Additionally, in Section 4 both PCR and PLS are applied to real-world regression problems, including Near-Infrared (NIR) Spectroscopy for Moisture Prediction, to evaluate their practical utility and interpretability. Finally, in Section 5 we discuss the strengths and weaknesses of each method, providing guidance on when to prefer PCR over PLS (or vice versa) and exploring potential hybrid approaches that integrate the advantages of both techniques.
 \newpage
 
 \section{Theory}
@@ -88,19 +89,13 @@ we obtain:
 \]
 where \( \Lambda \) contains the eigenvalues of \( X^T X \), we observe that when multicollinearity is present, some eigenvalues approach zero, making \( \Lambda^{-1} \) contain large values, which significantly inflates the variance of \( \hat{\beta}_{\text{OLS}} \).
 
-PCR and PLS overcome this issue by constructing a set of orthogonal predictors, thereby improving numerical stability and reducing overfitting. While,  PCR mitigates this issue by removing components corresponding to small eigenvalues, ensuring that the variance of the estimated coefficients remains controlled, PLS focuses on components that maximize the covariance with \( Y \), eliminating high-variance directions that contribute to unstable coefficient estimates, ensuring a more \textbf{robust} regression model.
+PCR and PLS overcome this issue by constructing a set of orthogonal predictors, thereby improving numerical stability and reducing overfitting. While,  PCR mitigates this issue by removing components corresponding to small eigenvalues, ensuring that the variance of the estimated coefficients remains controlled, PLS focuses on components that maximize the covariance with \( Y \), eliminating high-variance directions that contribute to unstable coefficient estimates, ensuring a more robust regression model.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{PCR_Analysis.png}
-    \caption{Principal Component Regression (PCR) Analysis Results}
-    \label{fig:PCR_analysis}
-\end{figure}
 
 \subsection{Principal Component Regression (PCR)}
 
-Principal Component Regression (PCR) is a widely used statistical technique that integrates \textbf{Principal Component Analysis (PCA)} with \textbf{Ordinary Least Squares (OLS)} regression to address issues of high-dimensionality and multicollinearity in regression problems. The fundamental idea behind PCR is to transform the original predictor variables, which may be highly correlated, into a new set of uncorrelated variables called \textbf{principal components}. Regression is then performed using a selected subset of these principal components, effectively reducing the dimensionality of the predictor space while mitigating instability in coefficient estimates.
-PCR is an effective tool for dealing with multicollinearity, it is important to note that it is an \textbf{unsupervised} method, meaning that the principal components are chosen solely based on variance in the predictor space, without considering the response variable \( Y \). This characteristic distinguishes it from methods like Partial Least Squares (PLS), which optimize component selection based on predictive relevance to \( Y \).
+Principal Component Regression (PCR) is a widely used statistical technique that integrates Principal Component Analysis (PCA) with Ordinary Least Squares (OLS) regression to address issues of high-dimensionality and multicollinearity in regression problems. The fundamental idea behind PCR is to transform the original predictor variables, which may be highly correlated, into a new set of uncorrelated variables called principal components. Regression is then performed using a selected subset of these principal components, effectively reducing the dimensionality of the predictor space while mitigating instability in coefficient estimates.
+PCR is an effective tool for dealing with multicollinearity, it is important to note that it is an unsupervised method, meaning that the principal components are chosen solely based on variance in the predictor space, without considering the response variable \( Y \). This characteristic distinguishes it from methods like Partial Least Squares (PLS), which optimize component selection based on predictive relevance to \( Y \).
 
 \paragraph{Mathematical Formulation} \ \
 
@@ -118,7 +113,7 @@ The key steps of PCR are as follows:
         \item \( V \) is a \( p \times p \) orthogonal matrix (right singular vectors), whose columns are the principal component directions.
     \end{itemize}
     
-    \item Transform the original predictors into \textbf{principal components}:
+    \item Transform the original predictors into principal components:
     \[
     Z = X V_k
     \]
@@ -149,7 +144,7 @@ which is sensitive to multicollinearity. In contrast, PCR estimates the coeffici
 where \( \Lambda_k \) contains only the top \( k \) eigenvalues of \( X^T X \). By discarding small eigenvalues, PCR inherently reduces variance, albeit at the cost of introducing some bias. This trade-off is similar to ridge regression and is crucial in high-dimensional settings.
 
 \subsubsection{Dimensionality Reduction and Eckart-Young Theorem}
-PCR achieves dimensionality reduction by selecting a subset of principal components. The \textbf{Eckart-Young theorem} states that the best low-rank approximation of \( X \) in terms of Frobenius norm is given by:
+PCR achieves dimensionality reduction by selecting a subset of principal components. The Eckart-Young theorem states that the best low-rank approximation of \( X \) in terms of Frobenius norm is given by:
 \[
 X_k = U_k \Sigma_k V_k^T
 \]
@@ -172,6 +167,16 @@ PCR is fundamentally an \textbf{unsupervised} technique because it selects princ
 X^T X = V \Lambda V^T
 \]
 Since \( V \) is computed purely from \( X \), it does not incorporate \( Y \). As a result, PCR may discard components that contain important predictive information for \( Y \), making it less efficient for regression tasks compared to supervised alternatives like PLS.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{PCR_Selected_Analysis.png}
+    \caption{Principal Component Regression (PCR) Analysis Results}
+    \label{fig:PCR_analysis}
+\end{figure}
+
+
+
 
 \subsubsection{Conclusion}
 Principal Component Regression provides a robust approach for handling multicollinearity and high-dimensional data. By selecting principal components that capture the most variance, PCR ensures stable coefficient estimates with reduced variance. However, its unsupervised nature may lead to suboptimal predictive performance, as it does not consider the response variable in component selection. In the next section, we introduce \textbf{Partial Least Squares (PLS)}, which addresses this limitation by incorporating response information into the component selection process.
@@ -258,6 +263,8 @@ The \textbf{Nonlinear Iterative Partial Least Squares (NIPALS)} algorithm is an 
     \item Repeat the process until convergence.
 \end{enumerate}
 
+The \textbf{NIPALS algorithm} used in \textbf{Partial Least Squares (PLS)} shares structural similarities with the \textbf{Gram-Schmidt process}, as both iteratively construct an orthonormal basis through projection and deflation. However, their objectives differ: Gram-Schmidt is an \textbf{unsupervised} linear algebra technique that orthonormalizes \textbf{column vectors} without considering an external target, whereas NIPALS is a \textbf{supervised} method that builds an \textbf{orthonormal basis of latent variables} to maximize covariance with the response variable \( Y \). While both methods ensure orthogonality at each step, NIPALS deflates both \( X \) and \( Y \) after extracting each latent variable, progressively focusing on predictive directions. This key difference makes \textbf{PLS more powerful than Principal Component Regression (PCR)}, as it selects components that are not just orthogonal but also \textbf{relevant for prediction}. In essence, \textbf{NIPALS can be viewed as a Gram-Schmidt-like process adapted for regression}, optimizing feature extraction for predictive accuracy rather than just mathematical convenience.
+
 \subsubsection{SIMPLS Algorithm}
 An alternative to NIPALS is the \textbf{SIMPLS} algorithm, which extracts PLS components without iterative deflation, making it computationally more efficient.
 
@@ -288,6 +295,7 @@ An alternative to NIPALS is the \textbf{SIMPLS} algorithm, which extracts PLS co
 
 SIMPLS is preferred when computational efficiency is a concern, especially for very large datasets.
 
+
 \subsubsection{Conclusion}
 \textbf{Partial Least Squares Regression} offers a robust alternative to standard regression techniques by integrating dimensionality reduction with predictive modeling. By selecting components that maximize covariance with \( Y \), PLS ensures better predictive performance than \textbf{PCR}, which focuses solely on variance preservation in \( X \). Its ability to address \textbf{multicollinearity} and balance the \textbf{bias-variance tradeoff} makes it an ideal method for high-dimensional regression problems. 
 
@@ -296,6 +304,16 @@ Compared to \textbf{PCR}, PLS is a \textbf{supervised} approach, ensuring that t
 It is important to clarify that \textbf{Principal Component Regression (PCR)} and \textbf{Partial Least Squares (PLS)} are \textbf{not feature selection techniques} in the traditional sense. Unlike methods such as \textbf{LASSO} or \textbf{stepwise regression}, which explicitly remove irrelevant predictors by setting some regression coefficients to zero, both PCR and PLS transform the original predictor space into a new set of latent variables.
 
 Even though PCR and PLS reduce the dimensionality of the predictor space, they do so by forming \textbf{linear combinations} of all original predictors. This means that each principal component or latent variable still contains information from \textbf{every predictor in the dataset}. Thus, PCR and PLS do not eliminate variables but instead project them into a lower-dimensional space where multicollinearity is mitigated, and variance is better controlled.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{PLS_Selected_Analysis.png}
+    \caption{Partial Least Squares (PLS) Analysis Results}
+    \label{fig:PLS_analysis}
+\end{figure}
+
+
 
 \subsection{Selection of the Optimal Number of Components in PCR and PLS}
 A crucial aspect of applying \textbf{PCR} and \textbf{PLS} effectively is determining the appropriate number of components (\( k \)) to retain. Selecting too few components may result in underfitting, where important predictive information is lost. Conversely, retaining too many components can lead to overfitting, reducing the generalization ability of the model. Various methods are available to guide this selection:
