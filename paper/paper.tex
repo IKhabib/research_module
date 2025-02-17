@@ -90,6 +90,12 @@ where \( \Lambda \) contains the eigenvalues of \( X^T X \), we observe that whe
 
 PCR and PLS overcome this issue by constructing a set of orthogonal predictors, thereby improving numerical stability and reducing overfitting. While,  PCR mitigates this issue by removing components corresponding to small eigenvalues, ensuring that the variance of the estimated coefficients remains controlled, PLS focuses on components that maximize the covariance with \( Y \), eliminating high-variance directions that contribute to unstable coefficient estimates, ensuring a more \textbf{robust} regression model.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{PCR_Analysis.png}
+    \caption{Principal Component Regression (PCR) Analysis Results}
+    \label{fig:PCR_analysis}
+\end{figure}
 
 \subsection{Principal Component Regression (PCR)}
 

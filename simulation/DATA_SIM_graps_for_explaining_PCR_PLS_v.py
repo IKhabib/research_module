@@ -101,6 +101,9 @@ ax_3d_pcr.legend()
 plt.tight_layout()
 plt.show()
 
+fig_pcr.savefig("PCR_Analysis.png")  # Save figure
+plt.close(fig_pcr)
+
 # Combined Grid for PLS
 fig_pls, axs_pls = plt.subplots(2, 2, figsize=(16, 12))
 
@@ -151,3 +154,6 @@ ax_3d_pls.legend()
 
 plt.tight_layout()
 plt.show()
+
+fig_pls.savefig("PLS_Analysis.png")  # Save figure
+plt.close(fig_pls)
