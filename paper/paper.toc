@@ -1,0 +1,47 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Theory}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Principal Component Regression (PCR)}{2}{subsection.2.1}%
+\contentsline {paragraph}{Mathematical Formulation}{2}{section*.2}%
+\contentsline {subsubsection}{\numberline {2.1.1}Variance Reduction and Bias in PCR}{3}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Dimensionality Reduction and Eckart-Young Theorem}{4}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Reconstructing \( \beta \) Coefficients in PCR}{4}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Unsupervised Nature of PCR}{4}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}Conclusion}{4}{subsubsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.2}Partial Least Squares (PLS)}{5}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Overview}{5}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Mathematical Formulation}{5}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Bias-Variance Tradeoff in PLS}{6}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}NIPALS Algorithm}{6}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}SIMPLS Algorithm}{7}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}Conclusion}{7}{subsubsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.3}Selection of the Optimal Number of Components in PCR and PLS}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Elbow Method for PCR and PLS}{8}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Elbow Method for Principal Component Regression (PCR)}{8}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Elbow Method for Partial Least Squares (PLS)}{9}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Interpretation and Practical Considerations}{9}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}Needle Algorithm for PCR and PLS}{9}{subsubsection.2.4.4}%
+\contentsline {paragraph}{Needle Algorithm for Principal Component Regression (PCR)}{9}{section*.3}%
+\contentsline {paragraph}{Needle Algorithm for Partial Least Squares (PLS)}{10}{section*.4}%
+\contentsline {subsubsection}{\numberline {2.4.5}Interpretation and Practical Considerations}{11}{subsubsection.2.4.5}%
+\contentsline {subsubsection}{\numberline {2.4.6}Cross-Validation for PCR and PLS}{11}{subsubsection.2.4.6}%
+\contentsline {paragraph}{Cross-Validation for Principal Component Regression (PCR)}{11}{section*.5}%
+\contentsline {paragraph}{Cross-Validation for Partial Least Squares (PLS)}{12}{section*.6}%
+\contentsline {subsubsection}{\numberline {2.4.7}Practical Considerations}{12}{subsubsection.2.4.7}%
+\contentsline {subsubsection}{\numberline {2.4.8}Comparison of PCR and PLS using Cross-Validation}{12}{subsubsection.2.4.8}%
+\contentsline {subsubsection}{\numberline {2.4.9}Final Recommendation}{13}{subsubsection.2.4.9}%
+\contentsline {subsubsection}{\numberline {2.4.10}Comparison of Methods}{13}{subsubsection.2.4.10}%
+\contentsline {subsection}{\numberline {2.5}Final Thoughts on Component Selection}{13}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Empirical Methodology}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Application of PCR}{13}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Application of PLS}{13}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Simulation Study}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Motivation}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Data Description}{14}{subsection.4.2}%
+\contentsline {paragraph}{Classical Data (No Multicollinearity)}{14}{section*.7}%
+\contentsline {paragraph}{Moderate Multicollinearity}{14}{section*.8}%
+\contentsline {paragraph}{Severe Multicollinearity (Low Observations)}{15}{section*.9}%
+\contentsline {paragraph}{Impact of Reduced Observations and Multicollinearity}{15}{section*.10}%
+\contentsline {subsection}{\numberline {4.3}Simulation Results}{16}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Empirical Data Description}{16}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Preprocessing}{16}{subsection.5.1}%
