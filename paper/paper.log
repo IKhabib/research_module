@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.13)  17 FEB 2025 19:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.13)  17 FEB 2025 19:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -908,47 +908,59 @@ been already used, duplicate ignored
                    \relax 
 l.108     \]
              [2]
-Underfull \vbox (badness 1132) has occurred while \output is active []
-
- [3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.en
-c}]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 153.
+(hyperref)                removing `math shift' on input line 137.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 153.
+(hyperref)                removing `\beta' on input line 137.
 
-<PCR_Selected_Analysis.png, id=225, 1156.32pt x 433.62pt>
+[3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}]
+<PCR_Selected_Analysis.png, id=219, 1156.32pt x 433.62pt>
 File: PCR_Selected_Analysis.png Graphic file (type png)
 <use PCR_Selected_Analysis.png>
-Package pdftex.def Info: PCR_Selected_Analysis.png  used on input line 173.
+Package pdftex.def Info: PCR_Selected_Analysis.png  used on input line 168.
 (pdftex.def)             Requested size: 435.32422pt x 163.24228pt.
-[4 <./PCR_Selected_Analysis.png>] [5] [6] [7]
-<PLS_Selected_Analysis.png, id=259, 1156.32pt x 433.62pt>
+
+Underfull \vbox (badness 6396) has occurred while \output is active []
+
+ [4 <./PCR_Selected_Analysis.png>] [5] [6] [7]
+<PLS_Selected_Analysis.png, id=254, 1156.32pt x 433.62pt>
 File: PLS_Selected_Analysis.png Graphic file (type png)
 <use PLS_Selected_Analysis.png>
-Package pdftex.def Info: PLS_Selected_Analysis.png  used on input line 311.
+Package pdftex.def Info: PLS_Selected_Analysis.png  used on input line 306.
 (pdftex.def)             Requested size: 435.32422pt x 163.24228pt.
- [8 <./PLS_Selected_Analysis.png>] [9] [10] [11] [12] [13] [14] [15] [16]
+ [8 <./PLS_Selected_Analysis.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Empty bibliography on input line 594.
+ [9]
+Underfull \vbox (badness 5862) has occurred while \output is active []
+
+ [10]
+[11] [12] [13] [14] [15] [16]
+
+LaTeX Warning: Empty bibliography on input line 589.
 
 [17] (./paper.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: BB119607E0B3A25615448DEEC16AF8DB;7487.
+(rerunfilecheck)             Checksum: 4BE5524CABD1BE685246804CEFA76031;7162.
 Package logreq Info: Writing requests to 'paper.run.xml'.
 \openout1 = `paper.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22589 strings out of 474116
- 390661 string characters out of 5743682
+ 22587 strings out of 474116
+ 390629 string characters out of 5743682
  1941187 words of memory out of 5000000
  44463 multiletter control sequences out of 15000+600000
  568859 words of font info for 131 fonts, out of 8000000 for 9000
@@ -965,10 +977,10 @@ cal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
 /texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
 texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
 xlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on paper.pdf (19 pages, 455851 bytes).
+Output written on paper.pdf (19 pages, 454464 bytes).
 PDF statistics:
- 407 PDF objects out of 1000 (max. 8388607)
- 356 compressed objects within 4 object streams
- 104 named destinations out of 1000 (max. 500000)
- 24883 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 400 PDF objects out of 1000 (max. 8388607)
+ 349 compressed objects within 4 object streams
+ 102 named destinations out of 1000 (max. 500000)
+ 24875 words of extra memory for PDF output out of 24883 (max. 10000000)
 

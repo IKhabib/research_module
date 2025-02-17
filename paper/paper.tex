@@ -124,34 +124,23 @@ The key steps of PCR are as follows:
     Y = Z \gamma + \epsilon
     \]
     where \( \gamma \) represents the regression coefficients associated with the principal components.
-
-    \item Convert the estimated coefficients back to the original predictor space:
-    \[
-    \hat{\beta}_{\text{OLS}} = V_k \hat{\gamma}
-    \]
-    ensuring that the final regression model remains interpretable in terms of the original predictor variables.
-\end{enumerate}
+  \end{enumerate}
 
 \subsubsection{Variance Reduction and Bias in PCR}
-A key feature of PCR is its ability to reduce variance in estimated coefficients by eliminating components associated with small eigenvalues of \( X^T X \). The standard OLS solution is given by:
-\[
-\hat{\beta}_{\text{OLS}} = (X^T X)^{-1} X^T Y
-\]
-which is sensitive to multicollinearity. In contrast, PCR estimates the coefficients as:
+A key feature of PCR is its ability to reduce variance in estimated coefficients by eliminating components associated with small eigenvalues of \( X^T X \). PCR estimates the coefficients as:
 \[
 \hat{\beta}_{\text{PCR}} = V_k \Lambda_k^{-1} V_k^T X^T Y
 \]
-where \( \Lambda_k \) contains only the top \( k \) eigenvalues of \( X^T X \). By discarding small eigenvalues, PCR inherently reduces variance, albeit at the cost of introducing some bias. This trade-off is similar to ridge regression and is crucial in high-dimensional settings.
+where \( \Lambda_k \) contains only the top \( k \) eigenvalues of \( X^T X \). By discarding small eigenvalues, PCR inherently reduces variance, albeit at the cost of introducing some bias. This trade-off is similar to ridge regression and is crucial in high-dimensional settings. Even though we are selecting a subset of principal components, Eckart-Young theorem guarantees that using the first \( k \) principal components in PCR is the best way to approximate and reduce dimensionality while preserving the most important information.
 
-\subsubsection{Dimensionality Reduction and Eckart-Young Theorem}
-PCR achieves dimensionality reduction by selecting a subset of principal components. The Eckart-Young theorem states that the best low-rank approximation of \( X \) in terms of Frobenius norm is given by:
-\[
-X_k = U_k \Sigma_k V_k^T
-\]
-where \( X_k \) retains only the first \( k \) singular values. By leveraging this property, PCR ensures that the reconstructed \( X_k \) preserves most of the information while eliminating noise.
 
 \subsubsection{Reconstructing \( \beta \) Coefficients in PCR}
-To compare PCR coefficients with OLS, we rewrite the original regression coefficients as:
+
+The standard OLS solution is given by:
+\[
+\hat{\beta}_{\text{OLS}} = (X^T X)^{-1} X^T Y
+\]
+which is sensitive to multicollinearity. To compare PCR coefficients with OLS, we rewrite the original regression coefficients as:
 \[
 \beta = V \Lambda^{-1} V^T X^T Y
 \]
@@ -160,6 +149,12 @@ Since PCR retains only \( k \) components, we approximate \( \beta \) as:
 \beta_{\text{PCR}} = V_k \Lambda_k^{-1} V_k^T X^T Y
 \]
 which confirms that PCR coefficients are derived from OLS but exclude components with small variance contributions.
+
+Convert the estimated coefficients back to the original predictor space:
+    \[
+    \hat{\beta}_{\text{OLS}} = V_k \hat{\gamma}
+    \]
+    ensuring that the final regression model remains interpretable in terms of the original predictor variables.
 
 \subsubsection{Unsupervised Nature of PCR}
 PCR is fundamentally an \textbf{unsupervised} technique because it selects principal components based on variance in \( X \) without considering \( Y \). This is evident from the PCA decomposition:
