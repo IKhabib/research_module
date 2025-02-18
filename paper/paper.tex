@@ -307,11 +307,11 @@ An alternative to NIPALS is the SIMPLS (Statistically Inspired Modification of P
 SIMPLS is preferred when computational efficiency is a concern, especially for very large datasets. Both methods produce the same final PLS regression coefficients, but their computation methods differ.
 
 \subsection{Selection of the Optimal Number of Components in PCR and PLS}
-A crucial aspect of applying PCR and PLS effectively is determining the appropriate number of components (\( k \)) to retain. Selecting too few components may result in underfitting, where important predictive information is lost. Conversely, retaining too many components can lead to overfitting, reducing the generalization ability of the model. Various methods are available to guide this selection:
-\subsection{Elbow Method for PCR and PLS}
-The Elbow Method is a widely used heuristic for selecting the optimal number of components in both Principal Component Regression (PCR) and Partial Least Squares (PLS). The method involves plotting a performance metric—such as cumulative explained variance for PCR or cumulative explained covariance for PLS—against the number of components. The optimal number of components is chosen at the "elbow point", where the marginal gain in variance or covariance explained diminishes significantly.
+A crucial aspect of applying PCR and PLS effectively is determining the appropriate number of components (\( k \)) to retain. Selecting too few components may result in underfitting, where important predictive information is lost. Conversely, retaining too many components can lead to overfitting, reducing the generalization ability of the model. In this section we will consider several methods for selecting the optimal number of components in PCR and PLS.
 
 \paragraph {Elbow Method} \ \
+
+The Elbow Method is widely used for selecting the optimal number of components in both Principal Component Regression (PCR) and Partial Least Squares (PLS). The method involves plotting a performance metric—such as cumulative explained variance for PCR or cumulative explained covariance for PLS—against the number of components. The optimal number of components is chosen at the "elbow point", where the marginal gain in variance or covariance explained diminishes significantly.
 
 In Principal Component Regression (PCR), component selection is based on Principal Component Analysis (PCA), which transforms the original predictor space into a set of orthogonal components that explain the variance in \( X \). Since PCR does not consider the response variable \( Y \) in component selection, it relies on the cumulative explained variance of the predictors.
 

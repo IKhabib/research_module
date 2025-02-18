@@ -11,7 +11,6 @@
 \contentsline {paragraph}{NIPALS Algorithm}{6}{section*.9}%
 \contentsline {paragraph}{SIMPLS Algorithm}{7}{section*.10}%
 \contentsline {subsection}{\numberline {2.3}Selection of the Optimal Number of Components in PCR and PLS}{8}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Elbow Method for PCR and PLS}{8}{subsection.2.4}%
 \contentsline {paragraph}{Elbow Method}{8}{section*.11}%
 \contentsline {paragraph}{Needle Algorithm}{9}{section*.12}%
 \contentsline {paragraph}{Cross-Validation}{10}{section*.13}%
