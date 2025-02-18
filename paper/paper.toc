@@ -5,38 +5,23 @@
 \contentsline {paragraph}{Mathematical Formulation}{2}{section*.2}%
 \contentsline {paragraph}{Unsupervised Nature of PCR}{3}{section*.3}%
 \contentsline {paragraph}{Variance Reduction and Bias in PCR}{3}{section*.5}%
-\contentsline {subsubsection}{\numberline {2.1.1}Conclusion}{4}{subsubsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.2}Partial Least Squares (PLS)}{4}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Overview}{4}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Mathematical Formulation}{5}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Bias-Variance Tradeoff in PLS}{6}{subsubsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}NIPALS Algorithm}{6}{subsubsection.2.2.4}%
-\contentsline {subsubsection}{\numberline {2.2.5}SIMPLS Algorithm}{7}{subsubsection.2.2.5}%
-\contentsline {subsubsection}{\numberline {2.2.6}Conclusion}{7}{subsubsection.2.2.6}%
+\contentsline {paragraph}{Mathematical Formulation}{5}{section*.7}%
+\contentsline {paragraph}{Bias-Variance Tradeoff in PLS}{5}{section*.8}%
+\contentsline {paragraph}{NIPALS Algorithm}{6}{section*.9}%
+\contentsline {paragraph}{SIMPLS Algorithm}{7}{section*.10}%
 \contentsline {subsection}{\numberline {2.3}Selection of the Optimal Number of Components in PCR and PLS}{8}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Elbow Method for PCR and PLS}{8}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Elbow Method for Principal Component Regression (PCR)}{9}{subsubsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.2}Elbow Method for Partial Least Squares (PLS)}{9}{subsubsection.2.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.3}Interpretation and Practical Considerations}{10}{subsubsection.2.4.3}%
-\contentsline {subsubsection}{\numberline {2.4.4}Needle Algorithm for PCR and PLS}{10}{subsubsection.2.4.4}%
-\contentsline {paragraph}{Needle Algorithm for Principal Component Regression (PCR)}{10}{section*.7}%
-\contentsline {paragraph}{Needle Algorithm for Partial Least Squares (PLS)}{11}{section*.8}%
-\contentsline {subsubsection}{\numberline {2.4.5}Interpretation and Practical Considerations}{11}{subsubsection.2.4.5}%
-\contentsline {subsubsection}{\numberline {2.4.6}Cross-Validation for PCR and PLS}{11}{subsubsection.2.4.6}%
-\contentsline {paragraph}{Cross-Validation for Principal Component Regression (PCR)}{12}{section*.9}%
-\contentsline {paragraph}{Cross-Validation for Partial Least Squares (PLS)}{12}{section*.10}%
-\contentsline {subsubsection}{\numberline {2.4.7}Practical Considerations}{13}{subsubsection.2.4.7}%
-\contentsline {subsubsection}{\numberline {2.4.8}Comparison of PCR and PLS using Cross-Validation}{13}{subsubsection.2.4.8}%
-\contentsline {subsubsection}{\numberline {2.4.9}Final Recommendation}{13}{subsubsection.2.4.9}%
-\contentsline {subsubsection}{\numberline {2.4.10}Comparison of Methods}{13}{subsubsection.2.4.10}%
-\contentsline {subsection}{\numberline {2.5}Final Thoughts on Component Selection}{13}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Simulation Study}{14}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Data Description}{14}{subsection.3.1}%
-\contentsline {paragraph}{Classical Data (No Multicollinearity)}{14}{section*.11}%
-\contentsline {paragraph}{Moderate Multicollinearity}{15}{section*.12}%
-\contentsline {paragraph}{Severe Multicollinearity (Low Observations)}{15}{section*.13}%
-\contentsline {subsection}{\numberline {3.2}Simulation Results: Classical Dataset (No Multicollinearity)}{16}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Simulation Results: Moderate Multicollinearity Dataset}{20}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Simulation Results: Severe Multicollinearity with Low Observations}{23}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Empirical Data Description}{24}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Preprocessing}{24}{subsection.4.1}%
+\contentsline {paragraph}{Elbow Method}{8}{section*.11}%
+\contentsline {paragraph}{Needle Algorithm}{9}{section*.12}%
+\contentsline {paragraph}{Cross-Validation}{10}{section*.13}%
+\contentsline {section}{\numberline {3}Simulation Study}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Data Description}{12}{subsection.3.1}%
+\contentsline {paragraph}{Classical Data (No Multicollinearity)}{13}{section*.14}%
+\contentsline {paragraph}{Moderate Multicollinearity}{13}{section*.15}%
+\contentsline {paragraph}{Severe Multicollinearity (Low Observations)}{13}{section*.16}%
+\contentsline {subsection}{\numberline {3.2}Simulation Results: Classical Dataset (No Multicollinearity)}{14}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Simulation Results: Moderate Multicollinearity Dataset}{18}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Simulation Results: Severe Multicollinearity with Low Observations}{21}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Empirical Data Description}{22}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Preprocessing}{22}{subsection.4.1}%
