@@ -20,7 +20,11 @@
 \contentsline {paragraph}{Moderate Multicollinearity}{13}{section*.15}%
 \contentsline {paragraph}{Severe Multicollinearity (Low Observations)}{13}{section*.16}%
 \contentsline {subsection}{\numberline {3.2}Simulation Results: Classical Dataset (No Multicollinearity)}{14}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Simulation Results: Moderate Multicollinearity Dataset}{18}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Simulation Results: Severe Multicollinearity with Low Observations}{21}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Empirical Data Description}{22}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Preprocessing}{22}{subsection.4.1}%
+\contentsline {subsection}{\numberline {3.3}Simulation Results: Moderate Multicollinearity Dataset}{16}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Simulation Results: Severe Multicollinearity with Low Observations}{17}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Analysis of NIR Data: Corn Moisture Prediction Using PLS and PCR}{20}{section.4}%
+\contentsline {section}{\numberline {5}Appendix}{23}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Simulation Results: Classical Dataset (No Multicollinearity}{23}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Simulation Results: Moderate Multicollinearity Datase}{25}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Simulation Results: Severe Multicollinearity with Low Observations}{27}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Analysis of NIR Data: Corn Moisture Prediction Using PLS and PCR}{29}{subsection.5.4}%

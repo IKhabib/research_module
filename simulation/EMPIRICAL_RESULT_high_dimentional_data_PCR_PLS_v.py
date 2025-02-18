@@ -63,6 +63,9 @@ plt.xlabel("Wavelength Index", fontsize=12)
 plt.ylabel("Absorbance", fontsize=12)
 plt.title("Original NIR Spectra of 80 Corn Samples", fontsize=14)
 plt.grid(True)
+# Save the figure
+plt.savefig("NIR_first_plot.png", dpi=300, bbox_inches='tight')  # Adjust DPI and bbox_inches for quality and layout
+
 plt.show()
 
 
@@ -103,6 +106,9 @@ plt.ylabel("RMSE", fontsize=12)
 plt.title("RMSE Comparison of PCR and PLS on Training Data (Up to 25 Components)", fontsize=14)
 plt.legend(fontsize=12)
 plt.grid(True)
+# Save the figure
+plt.savefig("NIR_second_plot.png", dpi=300, bbox_inches='tight')  # Adjust DPI and bbox_inches for quality and layout
+
 plt.show()
 
 # Plot RMSE vs. Number of Components for Test Data
@@ -114,6 +120,9 @@ plt.ylabel("RMSE", fontsize=12)
 plt.title("RMSE Comparison of PCR and PLS on Test Data (Up to 25 Components)", fontsize=14)
 plt.legend(fontsize=12)
 plt.grid(True)
+# Save the figure
+plt.savefig("NIR_third_plot.png", dpi=300, bbox_inches='tight')  # Adjust DPI and bbox_inches for quality and layout
+
 plt.show()
 
 # Compute metrics for optimal components
@@ -163,6 +172,9 @@ plt.ylabel("Coefficient Value", fontsize=12)
 plt.title("Regression Coefficients: PCR vs. PLS (Wavelength 1000-2400 nm)", fontsize=14)
 plt.legend(fontsize=12)
 plt.grid(True)
+# Save the figure
+plt.savefig("NIR_fourth_plot.png", dpi=300, bbox_inches='tight')  # Adjust DPI and bbox_inches for quality and layout
+
 plt.show()
 
 # Plot combined fitted vs actual values for PCR and PLS
@@ -175,4 +187,7 @@ plt.ylabel("Fitted Values", fontsize=12)
 plt.title("Fitted vs Actual Values: PCR and PLS", fontsize=14)
 plt.legend(fontsize=12)
 plt.grid(True)
+# Save the figure
+plt.savefig("NIR_fifth_plot.png", dpi=300, bbox_inches='tight')  # Adjust DPI and bbox_inches for quality and layout
+
 plt.show()
