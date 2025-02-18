@@ -236,7 +236,8 @@ ax.grid(True)
 plt.tight_layout()
 plt.show()
 
-
+fig.savefig("First_plot_second_simulation.png")  # Save figure with only the two selected plots
+plt.close(fig)
 
 # Plotting Cross-Validation MSE of PCR and PLS vs. Number of Components
 plt.figure(figsize=(12, 6))
@@ -257,6 +258,9 @@ plt.xlabel("Number of Components")
 plt.ylabel("Mean Squared Error ")
 plt.legend()
 plt.grid()
+
+# Save the figure
+plt.savefig("Second_plot_second_simulation.png", dpi=300, bbox_inches='tight')  # Adjust DPI and bbox_inches for quality and layout
 plt.show()
 
 # Define components to plot for PCR and PLS
@@ -295,7 +299,8 @@ for i, (n_components_pcr, n_components_pls) in enumerate(zip(components_to_plot_
 plt.tight_layout()
 plt.show()
 
-
+fig.savefig("Third_plot_second_simulation.png")  # Save figure with only the two selected plots
+plt.close(fig)
 
 
 
@@ -346,6 +351,9 @@ for idx, num_components in enumerate(components_to_plot_pls, start=5):  # Subplo
 # Adjust layout
 plt.tight_layout()
 plt.suptitle("Histograms of First Coefficient (OLS, PCR, PLS)", fontsize=16, y=1.05)
+# Save the figure
+plt.savefig("Fourth_plot_second_simulation.png", dpi=300, bbox_inches='tight')  # Adjust DPI and bbox_inches for quality and layout
+
 plt.show()
 
 
@@ -391,6 +399,9 @@ plt.ylabel('Value')
 plt.title('MSE Decomposition for Coefficients (OLS, PCR, PLS)')
 plt.legend()
 plt.tight_layout()
+# Save the figure
+plt.savefig("Fifth_plot_second_simulation.png", dpi=300, bbox_inches='tight')  # Adjust DPI and bbox_inches for quality and layout
+
 plt.show()
 
 
@@ -419,6 +430,8 @@ plt.xlabel("Observation Index")
 plt.ylabel("Y")
 plt.legend()
 plt.grid()
+# Save the figure
+plt.savefig("Sixth_plot_second_simulation.png", dpi=300, bbox_inches='tight')  # Adjust DPI and bbox_inches for quality and layout
 
 # Show the plot
 plt.show()
@@ -455,4 +468,18 @@ axes[2].grid()
 
 # Adjust layout and display
 plt.tight_layout()
+# Save the figure
+plt.savefig("Seventh_plot_second_simulation.png", dpi=300, bbox_inches='tight')  # Adjust DPI and bbox_inches for quality and layout
+
 plt.show()
+
+
+print(f"MSE OLS: {ols_mse}")
+print(f"Bias² OLS: {ols_bias_squared}")
+print(f"Variance OLS: {ols_variance}")
+print(f"MSE PCR at optimal component: {pcr_coef_mse[optimal_pcr_components]}")
+print(f"Bias² PCR at optimal component: {pcr_bias_squared[optimal_pcr_components]}")
+print(f"Variance PCR at optimal component: {pcr_variance[optimal_pcr_components]}")
+print(f"MSE PLS at optimal component: {pls_coef_mse[optimal_pls_components]}")
+print(f"Bias² PLS at optimal component: {pls_bias_squared[optimal_pls_components]}")
+print(f"Variance PLS at optimal component: {pls_variance[optimal_pls_components]}")

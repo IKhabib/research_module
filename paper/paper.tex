@@ -480,38 +480,25 @@ Since CV provides a direct measure of predictive performance, it is considered t
 
 \subsection{Final Thoughts on Component Selection}
 The choice of \( k \) should be guided by a combination of these methods, balancing the need for variance retention and predictive accuracy. In empirical applications, cross-validation is typically preferred due to its ability to optimize for prediction error directly.
+\newpage
 
-\section{Empirical Methodology}
-
-To assess the predictive performance of Principal Component Regression (PCR) and Partial Least Squares (PLS), we implement the following steps:
-
-\subsection{Application of PCR}
-\begin{enumerate}
-    \item Compute the \textbf{Principal Component Analysis (PCA)} on the predictor matrix \(X\).
-    \item Select the first \(k\) principal components that explain at least 95\% of the variance.
-    \item Fit an \textbf{OLS regression} model using the selected components as predictors.
-    \item Evaluate the model using \textbf{Root Mean Squared Error (RMSE)} and \textbf{Mean Squared Error (MSE)}.
-\end{enumerate}
-
-\subsection{Application of PLS}
-\begin{enumerate}
-    \item Use the \textbf{NIPALS algorithm} to compute PLS components.
-    \item Select the optimal number of latent components using cross-validation.
-    \item Fit a \textbf{PLS regression} model on the transformed predictor matrix.
-    \item Evaluate the model performance using \textbf{RMSE} and \textbf{MSE}.
-\end{enumerate}
 
 \section{Simulation Study}
 
-\subsection{Motivation}
-The purpose of this simulation study is to assess the performance of \textbf{Principal Component Regression (PCR)} and \textbf{Partial Least Squares (PLS)} under different data-generating scenarios. Specifically, we aim to analyze the predictive accuracy and robustness of both methods in the presence of \textbf{multicollinearity} and \textbf{high-dimensional predictor spaces}. The study follows a Monte Carlo simulation approach, allowing for a systematic evaluation of bias-variance tradeoffs and mean squared prediction error (MSPE).
+The goal of this simulation study is to evaluate the performance of Principal Component Regression (PCR) and Partial Least Squares (PLS) across different data-generating scenarios, focusing on their predictive accuracy, robustness, and bias-variance trade-offs in high-dimensional settings. Given the common challenges posed by multicollinearity and high-dimensional predictor spaces, we employ a Monte Carlo simulation framework to systematically analyze the behavior of these methods under varying feature dependencies. Simulation study is structured around three distinct setups:
 
-The simulation study is structured to mimic real-world high-dimensional regression problems with three distinct setups:
 \begin{enumerate}
-    \item \textbf{Classical Data (No Multicollinearity):} Predictors are independently generated from a normal distribution.
-    \item \textbf{Moderate Multicollinearity:} Predictors consist of base features and additional highly correlated features.
-    \item \textbf{Severe Multicollinearity (Low Observations):} Predictors exhibit strong correlation among features, and only a subset of them contribute to generating the response variable.
+    \item \textbf{Classical Data (No Multicollinearity)}: Predictors are independently sampled from a normal distribution, ensuring no multicollinearity.
+    \item \textbf{Moderate Multicollinearity}: The predictor matrix consists of a set of base features along with additional highly correlated features, introducing a controlled level of dependence.
+    \item \textbf{Severe Multicollinearity (Low Observations)}: The predictors exhibit strong correlations, with only a subset contributing to the response variable. This setup mimics scenarios where multicollinearity is extreme and sample size is limited, testing the methods' ability to extract meaningful structure from highly dependent data.
 \end{enumerate}
+
+To assess performance, we first apply PCR by performing Principal Component Analysis (PCA) on the predictor matrix and selecting the optimal number of components via \( k \)-fold cross-validation, minimizing the Root Mean Squared Error (RMSE) of prediction. Using these selected components, an Ordinary Least Squares (OLS) regression model is fitted, and predictive accuracy is evaluated through RMSE and Mean Squared Error (MSE). Additionally, we analyze the bias-variance trade-off of the coefficient estimates, comparing them to standard OLS results to quantify the extent of regularization. 
+
+Similarly, for PLS, we employ the Nonlinear Iterative Partial Least Squares (NIPALS) algorithm to extract latent components, selecting the optimal number via cross-validation to balance model complexity and predictive power. A PLS regression model is then fitted to the transformed predictor matrix, with performance assessed through RMSE, MSE, and coefficient stability. 
+
+To ensure the asymptotic validity of our findings, we conduct a Monte Carlo simulation, generating multiple datasets across the three setups to evaluate the stability of coefficient estimates, their bias-variance decomposition, and how these methods perform in large-sample scenarios. By systematically comparing PCR, PLS, and OLS across these conditions, we gain deeper insights into their relative advantages and limitations in high-dimensional regression problems.
+
 
 \subsection{Data Description}
 The dataset for each scenario is generated as follows:
@@ -553,14 +540,124 @@ The dataset for each scenario is generated as follows:
     \item Importantly, only \textbf{three} of the 10 predictors actively contribute to generating \( Y \), while the remaining seven are purely collinear noise variables.
 \end{itemize}
 
-\paragraph{Impact of Reduced Observations and Multicollinearity}
 In the severe multicollinearity scenario, the reduction in the number of observations relative to the number of predictors amplifies the risk of overfitting and instability in regression models. Furthermore, since only three predictors actively contribute to the response variable while the remaining seven are collinear noise, methods like PCR and PLS must effectively distinguish between relevant and redundant information. 
 
 PCR, which selects components based on variance, may retain principal components influenced by multicollinear features, leading to potential inefficiencies in prediction. Conversely, PLS, which maximizes covariance with \( Y \), is expected to perform better in identifying relevant predictors, thus mitigating the negative impact of multicollinearity.
 
 Each scenario is replicated 1000 times for statistical reliability.
 
-\subsection{Simulation Results}
+
+\subsection{Simulation Results: Classical Dataset (No Multicollinearity)}  
+
+In this scenario, the predictors are generated independently, ensuring there is no correlation between them. This setup creates the ideal conditions for Ordinary Least Squares (OLS) regression, which serves as the benchmark for evaluating Principal Component Regression (PCR) and Partial Least Squares (PLS). Our goal is to analyze how these methods perform when no multicollinearity is present and how their behavior changes as the number of components increases.
+
+As expected, OLS performs the best, achieving the lowest Mean Squared Error (MSE) and producing coefficient estimates that closely match the true values. Because there is no multicollinearity, OLS remains unbiased and efficient, making it the optimal estimator in this setting. However, when we apply PCR and PLS, we see a clear difference in how they handle feature selection and regularization.  
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{First_plot.png}
+    \caption{True vs Estimated coefficients: OLS, PCR and PLS}
+    \label{fig:PLS_analysis}
+\end{figure}
+
+Since PCR selects components based purely on variance, it struggles when using only a few components. For instance, with PCR(1) (one principal component), the model captures only a limited portion of the predictor space, leading to high bias. However, as we increase the number of components (PCR(5), PCR(10)), the model recovers more information, reducing bias and approaching OLS-level accuracy. This improvement demonstrates the classic bias-variance trade-off: fewer components introduce higher bias but lower variance, while more components reduce bias at the cost of increasing variance.  
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Fourth_plot.png}
+    \caption{Coefficient distribution: OLS, PCR and PLS}
+    \label{fig:PLS_analysis}
+\end{figure}
+
+In contrast, PLS finds a balance between bias and variance more efficiently than PCR. Unlike PCR, which selects components based solely on predictor variance, PLS chooses components based on their relationship with the response variable. This allows PLS to extract relevant predictive features even with a small number of components. As a result, PLS with fewer components (e.g., PLS(1), PLS(5)) already provides better coefficient estimates and lower MSE compared to PCR with the same number of components. This suggests that PLS is a more efficient dimensionality reduction method when the goal is to improve prediction accuracy.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Second_plot.png}
+    \caption{CV MSE by components: OLS, PCR and PLS}
+    \label{fig:PLS_analysis}
+\end{figure}
+
+The impact of component selection is further reflected in the quality of predictions. OLS predictions align almost perfectly with real values, reinforcing its reliability in this scenario. On the other hand, PCR with very few components, such as PCR(1), struggles to capture the full structure of the data, leading to poor predictions and a weaker fit. However, as the number of components increases, the predictions improve significantly, with PCR(10) closely matching the performance of OLS. In comparison, PLS consistently performs well even with fewer components, confirming its ability to extract meaningful features efficiently. This efficiency allows PLS to achieve strong predictive performance while using fewer dimensions than PCR, making it a more robust choice when dimensionality reduction is necessary.
+
+The stability of coefficient estimates also reflects these patterns. OLS estimates remain centered around the true values with minimal variation, confirming that it is an unbiased estimator. PCR, on the other hand, shows greater variability when fewer components are used, and its estimates are further from the true values. However, when enough components are included, PCR estimates stabilize and align with OLS. PLS estimates remain more stable than PCR, even with fewer components, highlighting its advantage in capturing relevant information effectively.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Fifth_plot.png}
+    \caption{Bias-Variance trade-off: OLS, PCR and PLS}
+    \label{fig:PLS_analysis}
+\end{figure}
+
+OLS is the best option when there is no multicollinearity, as it provides the most accurate and stable coefficient estimates. PCR requires a sufficient number of components to recover the full predictor space. Using too few components results in high bias and poor predictions, but increasing the number of components improves performance. PLS is more efficient than PCR in selecting relevant features, achieving strong predictive performance with fewer components. The bias-variance trade-off is evident—fewer components lead to high bias (underfitting), while using too many components increases variance (potential overfitting).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Third_plot.png}
+    \caption{Model fit: OLS, PCR and PLS}
+    \label{fig:PLS_analysis}
+\end{figure}
+
+This classical dataset serves as a baseline reference, showing how PCR and PLS behave under ideal conditions. The next step is to explore how these methods perform when moderate multicollinearity is introduced, where predictors become correlated and the assumptions of OLS begin to break down.
+
+
+\subsection{Simulation Results: Moderate Multicollinearity Dataset}  
+
+In this scenario, the predictor variables are moderately correlated, introducing a controlled level of multicollinearity. This setup challenges the assumptions of Ordinary Least Squares (OLS) regression and allows us to assess how Principal Component Regression (PCR) and Partial Least Squares (PLS) handle collinearity and improve prediction performance.
+
+When predictors exhibit moderate multicollinearity, OLS starts to struggle as the variance of coefficient estimates increases. This is evident in the Mean Squared Error (MSE) decomposition, where OLS has a significantly high variance component. While OLS remains unbiased, its estimates become unstable due to the correlated predictors.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{First_plot_second_simulation.png}
+    \caption{True vs Estimated coefficients: OLS, PCR and PLS}
+    \label{fig:PLS_analysis}
+\end{figure}
+
+PCR mitigates this issue by reducing the predictor space to uncorrelated principal components. However, with too few components (e.g., PCR(1)), the model captures only limited variance, resulting in high bias. As the number of components increases (PCR(5), PCR(10)), bias decreases, and the model performance improves. Nevertheless, PCR does not explicitly use response variable information when selecting components, which can lead to inefficiencies in retaining relevant predictive information.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Fourth_plot_second_simulation.png}
+    \caption{Coefficient distribution: OLS, PCR and PLS}
+    \label{fig:PLS_analysis}
+\end{figure}
+
+PLS, in contrast, is designed to extract components that maximize covariance with the response variable. This allows PLS to achieve a better balance between bias and variance with fewer components compared to PCR. Even with a small number of components (e.g., PLS(3)), it outperforms PCR with the same number of components, as it better identifies the underlying structure in the data.
+
+The impact of multicollinearity on model predictions becomes evident when comparing actual vs. predicted values. OLS predictions are less stable due to inflated coefficient variance, leading to fluctuations in its predictive performance. PCR with very few components underfits the data, failing to capture enough variance for accurate predictions. However, as the number of components increases, PCR’s predictions align more closely with actual values, though it still lags behind PLS.
+
+PLS consistently provides a stronger predictive fit, even with fewer components. Its predictions are closer to the true values, demonstrating that selecting components based on their relevance to the response variable improves generalization. This makes PLS a more robust choice when multicollinearity is present.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Second_plot_second_simulation.png}
+    \caption{CV MSE by components: OLS, PCR and PLS}
+    \label{fig:PLS_analysis}
+\end{figure}
+
+The stability of coefficient estimates also reflects these patterns. OLS estimates show high variability, confirming its sensitivity to multicollinearity. PCR, when using too few components, exhibits significant bias, whereas with more components, its estimates stabilize. PLS remains more stable than PCR throughout, highlighting its effectiveness in handling multicollinearity.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Fifth_plot_second_simulation.png}
+    \caption{Bias-Variance trade-off: OLS, PCR and PLS}
+    \label{fig:PLS_analysis}
+\end{figure}
+
+OLS struggles in the presence of moderate multicollinearity, with high variance in coefficient estimates reducing prediction stability. PCR mitigates multicollinearity but requires enough components to recover essential variance. Selecting too few components results in high bias, while increasing components gradually improves predictions. PLS effectively balances bias and variance, leveraging response-driven component selection to achieve strong predictive performance with fewer components. PLS outperforms PCR in handling multicollinearity, as it selects components that are directly relevant to the response variable rather than relying solely on variance. The bias-variance trade-off remains crucial—too few components lead to underfitting (high bias), whereas too many components can introduce instability.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Third_plot_second_simulation.png}
+    \caption{Model fit: OLS, PCR and PLS}
+    \label{fig:PLS_analysis}
+\end{figure}
+
+
+This dataset highlights the limitations of OLS in correlated predictor settings and demonstrates the advantages of PCR and PLS as alternatives. The next step is to explore how these methods perform under severe multicollinearity, where predictor correlations are extreme, and the number of observations is limited.
 
 
 

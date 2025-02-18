@@ -211,6 +211,8 @@ ax.grid(True)
 # Adjust layout
 plt.tight_layout()
 plt.show()
+fig.savefig("First_plot.png")  # Save figure with only the two selected plots
+plt.close(fig)
 
 # Plotting Cross-Validation MSE of PCR and PLS vs. Number of Components
 plt.figure(figsize=(12, 6))
@@ -231,6 +233,9 @@ plt.xlabel("Number of Components")
 plt.ylabel("Mean Squared Error ")
 plt.legend()
 plt.grid()
+
+# Save the figure
+plt.savefig("Second_plot.png", dpi=300, bbox_inches='tight')  # Adjust DPI and bbox_inches for quality and layout
 plt.show()
 
 # Define components to plot for PCR and PLS
@@ -270,6 +275,9 @@ for i, (n_components_pcr, n_components_pls) in enumerate(zip(components_to_plot_
 # Adjust layout
 plt.tight_layout()
 plt.show()
+
+fig.savefig("Third_plot.png")  # Save figure with only the two selected plots
+plt.close(fig)
 
 # Components to analyze of first coefficient for OLS, PLS and PCR
 components_to_plot_pcr = [1, 5, n_features]
@@ -318,7 +326,11 @@ for idx, num_components in enumerate(components_to_plot_pls, start=5):  # Subplo
 # Adjust layout
 plt.tight_layout()
 plt.suptitle("Histograms of First Coefficient (OLS, PCR, PLS)", fontsize=16, y=1.05)
+# Save the figure
+plt.savefig("Fourth_plot.png", dpi=300, bbox_inches='tight')  # Adjust DPI and bbox_inches for quality and layout
+
 plt.show()
+
 
 # Define components to plot for PCR and PLS
 components_to_plot_pcr = [1, 5, n_features]
@@ -361,7 +373,12 @@ plt.ylabel('Value')
 plt.title('MSE Decomposition for Coefficients (OLS, PCR, PLS)')
 plt.legend()
 plt.tight_layout()
+# Save the figure
+plt.savefig("Fifth_plot.png", dpi=300, bbox_inches='tight')  # Adjust DPI and bbox_inches for quality and layout
+
 plt.show()
+
+
 
 
 actual_pcr, predicted_pcr = pcr_y_actual_vs_predicted[optimal_pcr_components][0]  # First fold of first simulation
@@ -389,8 +406,12 @@ plt.ylabel("Y")
 plt.legend()
 plt.grid()
 
+# Save the figure
+plt.savefig("Sixth_plot.png", dpi=300, bbox_inches='tight')  # Adjust DPI and bbox_inches for quality and layout
+
 # Show the plot
 plt.show()
+
 
 
 # Plot actual vs. predicted Y for OLS, PCR, and PLS as lines in 3 subplots (one grid)
@@ -424,7 +445,12 @@ axes[2].grid()
 
 # Adjust layout and display
 plt.tight_layout()
+
+# Save the figure
+plt.savefig("Seventh_plot.png", dpi=300, bbox_inches='tight')  # Adjust DPI and bbox_inches for quality and layout
+
 plt.show()
+
 
 print(f"MSE OLS: {ols_mse}")
 print(f"Bias² OLS: {ols_bias_squared}")

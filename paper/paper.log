@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.13)  17 FEB 2025 19:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.13)  18 FEB 2025 02:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -750,7 +750,38 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count441
 \@quotereset=\count442
-(./paper.aux)
+(./paper.aux
+
+LaTeX Warning: Label `fig:PLS_analysis' multiply defined.
+
+
+LaTeX Warning: Label `fig:PLS_analysis' multiply defined.
+
+
+LaTeX Warning: Label `fig:PLS_analysis' multiply defined.
+
+
+LaTeX Warning: Label `fig:PLS_analysis' multiply defined.
+
+
+LaTeX Warning: Label `fig:PLS_analysis' multiply defined.
+
+
+LaTeX Warning: Label `fig:PLS_analysis' multiply defined.
+
+
+LaTeX Warning: Label `fig:PLS_analysis' multiply defined.
+
+
+LaTeX Warning: Label `fig:PLS_analysis' multiply defined.
+
+
+LaTeX Warning: Label `fig:PLS_analysis' multiply defined.
+
+
+LaTeX Warning: Label `fig:PLS_analysis' multiply defined.
+
+)
 \openout1 = `paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -918,7 +949,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }]
-<PCR_Selected_Analysis.png, id=219, 1156.32pt x 433.62pt>
+<PCR_Selected_Analysis.png, id=204, 1156.32pt x 433.62pt>
 File: PCR_Selected_Analysis.png Graphic file (type png)
 <use PCR_Selected_Analysis.png>
 Package pdftex.def Info: PCR_Selected_Analysis.png  used on input line 168.
@@ -927,7 +958,7 @@ Package pdftex.def Info: PCR_Selected_Analysis.png  used on input line 168.
 Underfull \vbox (badness 6396) has occurred while \output is active []
 
  [4 <./PCR_Selected_Analysis.png>] [5] [6] [7]
-<PLS_Selected_Analysis.png, id=254, 1156.32pt x 433.62pt>
+<PLS_Selected_Analysis.png, id=239, 1156.32pt x 433.62pt>
 File: PLS_Selected_Analysis.png Graphic file (type png)
 <use PLS_Selected_Analysis.png>
 Package pdftex.def Info: PLS_Selected_Analysis.png  used on input line 306.
@@ -939,31 +970,105 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 5862) has occurred while \output is active []
 
  [10]
-[11] [12] [13] [14] [15] [16]
+[11] [12] [13] [14] [15]
+<First_plot.png, id=295, 1011.78pt x 722.7pt>
+File: First_plot.png Graphic file (type png)
+<use First_plot.png>
+Package pdftex.def Info: First_plot.png  used on input line 558.
+(pdftex.def)             Requested size: 435.32422pt x 310.95343pt.
 
-LaTeX Warning: Empty bibliography on input line 589.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[17] (./paper.aux)
+ [16]
+<Fourth_plot.png, id=300, 1437.6912pt x 381.8265pt>
+File: Fourth_plot.png Graphic file (type png)
+<use Fourth_plot.png>
+Package pdftex.def Info: Fourth_plot.png  used on input line 568.
+(pdftex.def)             Requested size: 435.32422pt x 115.60919pt.
+<Second_plot.png, id=301, 723.1818pt x 393.6306pt>
+File: Second_plot.png Graphic file (type png)
+<use Second_plot.png>
+Package pdftex.def Info: Second_plot.png  used on input line 577.
+(pdftex.def)             Requested size: 435.32422pt x 236.95499pt.
+
+[17 <./First_plot.png> <./Fourth_plot.png>]
+<Fifth_plot.png, id=311, 454.8192pt x 338.9463pt>
+File: Fifth_plot.png Graphic file (type png)
+<use Fifth_plot.png>
+Package pdftex.def Info: Fifth_plot.png  used on input line 588.
+(pdftex.def)             Requested size: 435.32422pt x 324.41762pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18 <./Second_plot.png>]
+<Third_plot.png, id=318, 1040.688pt x 433.62pt>
+File: Third_plot.png Graphic file (type png)
+<use Third_plot.png>
+Package pdftex.def Info: Third_plot.png  used on input line 597.
+(pdftex.def)             Requested size: 435.32422pt x 181.38472pt.
+ [19 <./Fifth_plot.png> <./Third_plot.png>]
+<First_plot_second_simulation.png, id=327, 1011.78pt x 722.7pt>
+File: First_plot_second_simulation.png Graphic file (type png)
+<use First_plot_second_simulation.png>
+Package pdftex.def Info: First_plot_second_simulation.png  used on input line 6
+13.
+(pdftex.def)             Requested size: 435.32422pt x 310.95343pt.
+<Fourth_plot_second_simulation.png, id=328, 1437.6912pt x 381.8265pt>
+File: Fourth_plot_second_simulation.png Graphic file (type png)
+<use Fourth_plot_second_simulation.png>
+Package pdftex.def Info: Fourth_plot_second_simulation.png  used on input line 
+622.
+(pdftex.def)             Requested size: 435.32422pt x 115.60919pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20 <./First_plot_second_simulation.png>]
+<Second_plot_second_simulation.png, id=335, 729.4452pt x 393.6306pt>
+File: Second_plot_second_simulation.png Graphic file (type png)
+<use Second_plot_second_simulation.png>
+Package pdftex.def Info: Second_plot_second_simulation.png  used on input line 
+635.
+(pdftex.def)             Requested size: 435.32422pt x 234.91284pt.
+<Fifth_plot_second_simulation.png, id=336, 454.8192pt x 338.9463pt>
+File: Fifth_plot_second_simulation.png Graphic file (type png)
+<use Fifth_plot_second_simulation.png>
+Package pdftex.def Info: Fifth_plot_second_simulation.png  used on input line 6
+45.
+(pdftex.def)             Requested size: 435.32422pt x 324.41762pt.
+ [21 <./Fourth_plot_second_simulation.png> <./Second_plot_second_simulation.png
+>]
+<Third_plot_second_simulation.png, id=345, 1040.688pt x 433.62pt>
+File: Third_plot_second_simulation.png Graphic file (type png)
+<use Third_plot_second_simulation.png>
+Package pdftex.def Info: Third_plot_second_simulation.png  used on input line 6
+54.
+(pdftex.def)             Requested size: 435.32422pt x 181.38472pt.
+ [22 <./Fifth_plot_second_simulation.png> <./Third_plot_second_simulation.png>]
+
+
+LaTeX Warning: Empty bibliography on input line 686.
+
+[23] (./paper.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 4BE5524CABD1BE685246804CEFA76031;7162.
+(rerunfilecheck)             Checksum: 1B5AD5116F31E829580D2090A37A02EF;7162.
 Package logreq Info: Writing requests to 'paper.run.xml'.
 \openout1 = `paper.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22587 strings out of 474116
- 390629 string characters out of 5743682
- 1941187 words of memory out of 5000000
- 44463 multiletter control sequences out of 15000+600000
- 568859 words of font info for 131 fonts, out of 8000000 for 9000
+ 22663 strings out of 474116
+ 392839 string characters out of 5743682
+ 1940187 words of memory out of 5000000
+ 44529 multiletter control sequences out of 15000+600000
+ 568994 words of font info for 134 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,7n,81p,1481b,1902s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -977,10 +1082,10 @@ cal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
 /texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
 texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
 xlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on paper.pdf (19 pages, 454464 bytes).
+Output written on paper.pdf (25 pages, 1953057 bytes).
 PDF statistics:
- 400 PDF objects out of 1000 (max. 8388607)
- 349 compressed objects within 4 object streams
- 102 named destinations out of 1000 (max. 500000)
- 24875 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 432 PDF objects out of 1000 (max. 8388607)
+ 355 compressed objects within 4 object streams
+ 106 named destinations out of 1000 (max. 500000)
+ 24901 words of extra memory for PDF output out of 29859 (max. 10000000)
 
