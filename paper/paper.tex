@@ -76,17 +76,17 @@ This paper provides a comprehensive analysis of  Principal Component Regression 
 \section{Theory}
 
 Traditional regression methods, such as OLS, assume that the predictor matrix \( X \) has full rank, ensuring a unique solution for the estimated coefficients. However, in many practical applications, datasets exhibit high collinearity among predictors or even contain more predictors than observations (\( p \gg n \)), making \( X^T X \) nearly singular or non-invertible. This leads to large variances in coefficient estimates, making the regression model highly unstable. The instability of OLS is evident in the variance expression:
-\[
+\begin{equation} 
 \text{Var}(\hat{\beta}_{\text{OLS}}) = \sigma^2 (X^T X)^{-1}
-\]
+\end{equation}
 Applying the eigen-decomposition:
-\[
+\begin{equation}
 X^T X = Q \Lambda Q^T
-\]
+\end{equation}
 we obtain:
-\[
+\begin{equation}
 \text{Var}(\hat{\beta}_{\text{OLS}}) = \sigma^2 Q \Lambda^{-1} Q^T
-\]
+\end{equation}
 where \( \Lambda \) contains the eigenvalues of \( X^T X \), we observe that when multicollinearity is present, some eigenvalues approach zero, making \( \Lambda^{-1} \) contain large values, which significantly inflates the variance of \( \hat{\beta}_{\text{OLS}} \).
 
 PCR and PLS overcome this issue by constructing a set of orthogonal predictors, thereby improving numerical stability and reducing overfitting. While,  PCR mitigates this issue by removing components corresponding to small eigenvalues, ensuring that the variance of the estimated coefficients remains controlled, PLS focuses on components that maximize the covariance with \( Y \), eliminating high-variance directions that contribute to unstable coefficient estimates, ensuring a more robust regression model.
@@ -94,7 +94,8 @@ PCR and PLS overcome this issue by constructing a set of orthogonal predictors, 
 
 \subsection{Principal Component Regression (PCR)}
 
-Principal Component Regression (PCR) is a widely used statistical technique that integrates Principal Component Analysis (PCA) with Ordinary Least Squares (OLS) regression to address issues of high-dimensionality and multicollinearity in regression problems. The fundamental idea behind PCR is to transform the original predictor variables, which may be highly correlated, into a new set of uncorrelated variables called principal components. Regression is then performed using a selected subset of these principal components, effectively reducing the dimensionality of the predictor space while mitigating instability in coefficient estimates.
+Principal Component Regression (PCR) is a widely used statistical technique that integrates Principal Component Analysis (PCA) with Ordinary Least Squares (OLS) regression to address issues of high-dimensionality and multicollinearity in regression problems. The fundamental idea behind PCR is to transform the original predictor variables, which may be highly correlated, into a new set of uncorrelated variables called principal components (Figure 1). Regression is then performed using a selected subset of these principal components, effectively reducing the dimensionality of the predictor space while mitigating instability in coefficient estimates.
+
 PCR is an effective tool for dealing with multicollinearity, it is important to note that it is an unsupervised method, meaning that the principal components are chosen solely based on variance in the predictor space, without considering the response variable \( Y \). This characteristic distinguishes it from methods like Partial Least Squares (PLS), which optimize component selection based on predictive relevance to \( Y \).
 
 \paragraph{Mathematical Formulation} \ \
@@ -103,9 +104,9 @@ The key steps of PCR are as follows:
 
 \begin{enumerate}
     \item Perform \textbf{Principal Component Analysis (PCA)} on \( X \), which involves computing the \textbf{Singular Value Decomposition (SVD)}:
-    \[
+   \begin{equation}
     X = U \Sigma V^T
-    \]
+    \end{equation}
     where:
     \begin{itemize}
         \item \( U \) is an \( n \times n \) orthogonal matrix (left singular vectors),
@@ -114,53 +115,23 @@ The key steps of PCR are as follows:
     \end{itemize}
     
     \item Transform the original predictors into principal components:
-    \[
-    Z = X V_k
-    \]
-    where \( V_k \) consists of the first \( k \) principal components that capture the most variance in \( X \). The selection of \( k \) is often done using cross-validation or based on the cumulative explained variance criterion.
-
+    \begin{equation}
+    Z = X V
+    \end{equation}
+ 
     \item Perform OLS regression on the transformed dataset:
-    \[
+    \begin{equation}
     Y = Z \gamma + \epsilon
-    \]
-    where \( \gamma \) represents the regression coefficients associated with the principal components.
+    \end{equation}
+    where \( \gamma \) is the transformed coefficient vector in the principal component space.
   \end{enumerate}
+  
+ \paragraph{Unsupervised Nature of PCR} \ \
 
-\subsubsection{Variance Reduction and Bias in PCR}
-A key feature of PCR is its ability to reduce variance in estimated coefficients by eliminating components associated with small eigenvalues of \( X^T X \). PCR estimates the coefficients as:
-\[
-\hat{\beta}_{\text{PCR}} = V_k \Lambda_k^{-1} V_k^T X^T Y
-\]
-where \( \Lambda_k \) contains only the top \( k \) eigenvalues of \( X^T X \). By discarding small eigenvalues, PCR inherently reduces variance, albeit at the cost of introducing some bias. This trade-off is similar to ridge regression and is crucial in high-dimensional settings. Even though we are selecting a subset of principal components, Eckart-Young theorem guarantees that using the first \( k \) principal components in PCR is the best way to approximate and reduce dimensionality while preserving the most important information.
-
-
-\subsubsection{Reconstructing \( \beta \) Coefficients in PCR}
-
-The standard OLS solution is given by:
-\[
-\hat{\beta}_{\text{OLS}} = (X^T X)^{-1} X^T Y
-\]
-which is sensitive to multicollinearity. To compare PCR coefficients with OLS, we rewrite the original regression coefficients as:
-\[
-\beta = V \Lambda^{-1} V^T X^T Y
-\]
-Since PCR retains only \( k \) components, we approximate \( \beta \) as:
-\[
-\beta_{\text{PCR}} = V_k \Lambda_k^{-1} V_k^T X^T Y
-\]
-which confirms that PCR coefficients are derived from OLS but exclude components with small variance contributions.
-
-Convert the estimated coefficients back to the original predictor space:
-    \[
-    \hat{\beta}_{\text{OLS}} = V_k \hat{\gamma}
-    \]
-    ensuring that the final regression model remains interpretable in terms of the original predictor variables.
-
-\subsubsection{Unsupervised Nature of PCR}
 PCR is fundamentally an \textbf{unsupervised} technique because it selects principal components based on variance in \( X \) without considering \( Y \). This is evident from the PCA decomposition:
-\[
+\begin{equation}
 X^T X = V \Lambda V^T
-\]
+\end{equation}
 Since \( V \) is computed purely from \( X \), it does not incorporate \( Y \). As a result, PCR may discard components that contain important predictive information for \( Y \), making it less efficient for regression tasks compared to supervised alternatives like PLS.
 
 \begin{figure}[H]
@@ -170,8 +141,30 @@ Since \( V \) is computed purely from \( X \), it does not incorporate \( Y \). 
     \label{fig:PCR_analysis}
 \end{figure}
 
+\paragraph{Variance Reduction and Bias in PCR}  \ \
 
+A key feature of PCR is its ability to reduce variance in estimated coefficients by using only first \( k \) principal components and eliminating components associated with small eigenvalues:
+   \begin{equation}
+    Z_k = X V_k
+    \end{equation}
+    \begin{equation}
+\hat{\gamma_k} = (Z_k^T Z_k)^{-1} Z_k^T Y
+\end{equation}
+\begin{equation}
+\hat{\gamma_k}  = \Lambda_k^{-1} V_k^T X^T Y
+\end{equation}
+    where \( \Lambda_k \) contains only the top \( k \) eigenvalues of \( X^T X \), while \( V_k \) consists of the first \( k \) principal components that capture the most variance in \( X \). The selection of \( k \) is often done using cross-validation or based on the cumulative explained variance criterion (Figure 1).
 
+Transforming back to the original space:
+\begin{equation}
+\hat{\beta}_{\text{PCR}} = V_k \hat{\gamma_k} = V_k \Lambda_k^{-1} V_k^T X^T Y
+\end{equation}
+Recall that OLS can be written in terms of PCA decomposition (7). If all principal components are used (\( k \) = \( p \)), then we have:
+\begin{equation}
+\hat{\beta}_{\text{PCR}} = \hat{\beta}_{\text{OLS}} = V \Lambda^{-1} V^T X^T Y
+\end{equation}
+
+Which confirms that, by discarding small eigenvalues, PCR inherently reduces variance, albeit at the cost of introducing some bias. This trade-off is similar to ridge regression and is crucial in high-dimensional settings. Even though we are selecting a subset of principal components, Eckart-Young theorem guarantees that using the first \( k \) principal components in PCR is the best way to approximate and reduce dimensionality while preserving the most important information.
 
 \subsubsection{Conclusion}
 Principal Component Regression provides a robust approach for handling multicollinearity and high-dimensional data. By selecting principal components that capture the most variance, PCR ensures stable coefficient estimates with reduced variance. However, its unsupervised nature may lead to suboptimal predictive performance, as it does not consider the response variable in component selection. In the next section, we introduce Partial Least Squares (PLS), which addresses this limitation by incorporating response information into the component selection process.
@@ -187,9 +180,9 @@ The advantages of PLS make it widely applicable in fields such as chemometrics, 
 
 \subsubsection{Mathematical Formulation}
 In the standard multiple linear regression framework, the relationship between the response \( Y \) and predictor matrix \( X \) is given by:
-\[
+\begin{equation}
 Y = X \beta + \epsilon
-\]
+\end{equation}
 where:
 \begin{itemize}
     \item \( Y \) is the \( n \times 1 \) response vector,
@@ -199,13 +192,13 @@ where:
 \end{itemize}
 
 Unlike OLS, which directly estimates \( \beta \) as:
-\[
+\begin{equation}
 \hat{\beta}_{\text{OLS}} = (X^T X)^{-1} X^T Y
-\]
+\end{equation}
 PLS constructs \textbf{latent variables (LVs)} as linear combinations of the original predictors:
-\[
+\begin{equation}
 T = XW, \quad U = YQ
-\]
+\end{equation}
 where:
 \begin{itemize}
     \item \( T \) and \( U \) are the latent variables (score matrices) for \( X \) and \( Y \), respectively,
@@ -215,19 +208,19 @@ where:
 PLS selects components by maximizing the covariance between \( XW \) and \( YQ \), ensuring that the extracted components remain highly predictive of the response.
 
 The final regression model is then expressed in terms of these components:
-\[
+\begin{equation}
 Y = T B + \epsilon
-\]
+\end{equation}
 where \( B \) represents the regression coefficients for the latent variables. The estimated regression coefficients for the original predictors can be obtained as:
-\[
+\begin{equation}
 \hat{\beta}_{\text{PLS}} = W (P^T W)^{-1} B
-\]
+\end{equation}
 
 \subsubsection{Bias-Variance Tradeoff in PLS}
 PLS naturally introduces regularization by selecting a reduced set of components. The tradeoff between bias and variance is evident in:
-\[
+\begin{equation}
 \hat{\beta}_{\text{PLS}} = W (P^T W)^{-1} B
-\]
+\end{equation}
 where fewer components lead to lower variance but higher bias. This mechanism prevents overfitting, particularly in high-dimensional settings.
 
 \subsubsection{NIPALS Algorithm}
@@ -236,25 +229,25 @@ The \textbf{Nonlinear Iterative Partial Least Squares (NIPALS)} algorithm is an 
 \begin{enumerate}
     \item Initialize \( u = Y[:,1] \), the first column of \( Y \).
     \item Compute the weight vector:
-        \[
+        \begin{equation}
         w = \frac{X^T u}{\|X^T u\|}
-        \]
+        \end{equation}
     \item Compute the latent score vector:
-        \[
+        \begin{equation}
         t = Xw
-        \]
+        \end{equation}
     \item Compute the loading vector:
-        \[
+        \begin{equation}
         p = \frac{X^T t}{t^T t}
-        \]
+        \end{equation}
     \item Compute the regression coefficient:
-        \[
+        \begin{equation}
         b = \frac{u^T t}{t^T t}
-        \]
+        \end{equation}
     \item Deflate \( X \) and \( Y \):
-        \[
+        \begin{equation}
         X = X - tp^T, \quad Y = Y - btq^T
-        \]
+        \end{equation}
     \item Repeat the process until convergence.
 \end{enumerate}
 
@@ -265,26 +258,26 @@ An alternative to NIPALS is the SIMPLS algorithm, which extracts PLS components 
 
 \begin{enumerate}
     \item Compute the covariance matrix:
-        \[
+        \begin{equation}
         S = X^T Y
-        \]
+        \end{equation}
     \item Extract the first singular vector \( r_1 \) from SVD of \( S \).
     \item Compute the score vector:
-        \[
+        \begin{equation}
         t_1 = Xr_1
-        \]
+        \end{equation}
     \item Compute the loading:
-        \[
+        \begin{equation}
         p_1 = X^T t_1 / (t_1^T t_1)
-        \]
+        \end{equation}
     \item Compute the regression coefficient:
-        \[
+        \begin{equation}
         b_1 = (t_1^T Y) / (t_1^T t_1)
-        \]
+        \end{equation}
     \item Deflate the covariance matrix:
-        \[
+        \begin{equation}
         S = S - r_1 (r_1^T S)
-        \]
+        \end{equation}
     \item Repeat for additional components.
 \end{enumerate}
 
@@ -319,30 +312,30 @@ The Elbow Method is a widely used heuristic for selecting the optimal number of 
 In Principal Component Regression (PCR), component selection is based on Principal Component Analysis (PCA), which transforms the original predictor space into a set of orthogonal components that explain the variance in \( X \). Since PCR does not consider the response variable \( Y \) in component selection, it relies on the cumulative explained variance of the predictors.
 
 Mathematically, the proportion of variance explained by the first \( k \) principal components is given by:
-\[
+\begin{equation}
 \text{Explained Variance}(k) = \frac{\sum_{i=1}^{k} \lambda_i}{\sum_{i=1}^{p} \lambda_i}
-\]
+\end{equation}
 where \( \lambda_i \) are the eigenvalues of the covariance matrix \( X^T X \), which correspond to the variances captured by each principal component.
 
 The selection of \( k \) is determined by identifying the "elbow point" on the cumulative variance plot. This is the point where adding more components results in a negligible increase in explained variance. In practical applications, a commonly used threshold is:
-\[
+\begin{equation}
 \sum_{i=1}^{k} \lambda_i \geq 0.95 \sum_{i=1}^{p} \lambda_i
-\]
+\end{equation}
 indicating that at least 95\% of the total variance in \( X \) has been retained.
 
 \subsubsection{Elbow Method for Partial Least Squares (PLS)}
 Unlike PCR, which selects components based solely on variance in \( X \), Partial Least Squares (PLS) extracts components that maximize the covariance between \( X \) and \( Y \). Therefore, the Elbow Method in PLS is based on the cumulative explained covariance rather than variance.
 
 For PLS, we define the cumulative explained covariance as:
-\[
+\begin{equation}
 \text{Explained Covariance}(k) = \frac{\sum_{i=1}^{k} \text{Cov}(t_i, y)^2}{\sum_{i=1}^{p} \text{Cov}(t_i, y)^2}
-\]
+\end{equation}
 where \( t_i \) are the latent variables obtained from PLS, which are linear combinations of the original predictors.
 
 Similar to PCR, the "elbow point" is identified on the cumulative covariance plot, marking the point beyond which additional components contribute minimally to predictive power. The typical threshold for PLS component selection is:
-\[
+\begin{equation}
 \sum_{i=1}^{k} \text{Cov}(t_i, y)^2 \geq 0.90 \sum_{i=1}^{p} \text{Cov}(t_i, y)^2
-\]
+\end{equation}
 indicating that at least 90\% of the total covariance between \( X \) and \( Y \) is captured by the first \( k \) components.
 
 \subsubsection{Interpretation and Practical Considerations}
@@ -361,46 +354,46 @@ The Needle Algorithm is an alternative method for determining the optimal number
 In Principal Component Regression (PCR), the goal is to select the number of components \( k \) that retain most of the variance in \( X \) while avoiding unnecessary complexity. The Needle Algorithm identifies \( k \) by examining the second derivative of the cumulative explained variance function.
 
 Mathematically, the proportion of variance explained by the first \( k \) components is:
-\[
+\begin{equation}
 \text{Explained Variance}(k) = \frac{\sum_{i=1}^{k} \lambda_i}{\sum_{i=1}^{p} \lambda_i}
-\]
+\end{equation}
 where \( \lambda_i \) are the eigenvalues of \( X^T X \). 
 
 The \textbf{Needle Criterion} is defined as:
-\[
+\begin{equation}
 \Delta_k = \lambda_k - \lambda_{k+1}
-\]
-\[
+\end{equation}
+\begin{equation}
 \text{Relative Gain}(k) = \frac{\Delta_k}{\sum_{i=1}^{k} \lambda_i}
-\]
+\end{equation}
 
 The optimal \( k \) is determined when the relative gain in explained variance falls below a predefined threshold \( \epsilon \), typically around \( 1\% \):
-\[
+\begin{equation}
 \frac{\lambda_k - \lambda_{k+1}}{\sum_{i=1}^{k} \lambda_i} < \epsilon
-\]
+\end{equation}
 This ensures that additional components do not contribute meaningfully to variance retention.
 
 \paragraph{Needle Algorithm for Partial Least Squares (PLS)}
 For Partial Least Squares (PLS), the Needle Algorithm follows the same principle but is applied to the explained covariance between \( X \) and \( Y \) instead of variance in \( X \). 
 
 The proportion of covariance explained by the first \( k \) components is given by:
-\[
+\begin{equation}
 \text{Explained Covariance}(k) = \frac{\sum_{i=1}^{k} \text{Cov}(t_i, y)^2}{\sum_{i=1}^{p} \text{Cov}(t_i, y)^2}
-\]
+\end{equation}
 where \( t_i \) are the latent variables extracted by PLS.
 
 The Needle Criterion for PLS is:
-\[
+\begin{equation}
 \Delta_k = \text{Cov}(t_k, y)^2 - \text{Cov}(t_{k+1}, y)^2
-\]
-\[
+\end{equation}
+\begin{equation}
 \text{Relative Gain}(k) = \frac{\Delta_k}{\sum_{i=1}^{k} \text{Cov}(t_i, y)^2}
-\]
+\end{equation}
 
 As in PCR, the optimal \( k \) is found when the relative gain in explained covariance drops below a predefined threshold \( \epsilon \):
-\[
+\begin{equation}
 \frac{\text{Cov}(t_k, y)^2 - \text{Cov}(t_{k+1}, y)^2}{\sum_{i=1}^{k} \text{Cov}(t_i, y)^2} < \epsilon
-\]
+\end{equation}
 Typically, \( \epsilon \) is set to 1\% to 2\%, ensuring that only significant components contributing to the prediction of \( Y \) are retained.
 
 \subsubsection{Interpretation and Practical Considerations}
@@ -422,14 +415,14 @@ The procedure for selecting \( k \) via CV follows these steps:
     \item Split the dataset into \( K \) \textbf{folds} (typically \( K = 5 \) or \( K = 10 \)).
     \item For each fold, fit the \textbf{PCR model} using the first \( k \) principal components and compute the prediction error on the held-out data.
     \item Compute the \textbf{Cross-Validation Mean Squared Error (CV-MSE)} for each \( k \):
-    \[
+    \begin{equation}
     \text{CV-MSE}(k) = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_{-i,k})^2
-    \]
+    \end{equation}
     where \( \hat{y}_{-i,k} \) is the prediction for the \( i \)-th observation using a model trained without that observation and with \( k \) components.
     \item Select \( k^* \) that minimizes \(\text{CV-MSE}(k)\):
-    \[
+    \begin{equation}
     k^* = \arg\min_k \text{CV-MSE}(k)
-    \]
+    \end{equation}
 \end{enumerate}
 
 Since PCR selects principal components without considering \( Y \), CV ensures that the selected components contribute to predictive accuracy rather than just maximizing variance in \( X \).
@@ -442,13 +435,13 @@ The CV procedure for PLS follows the same general steps as in PCR:
     \item Split the dataset into \( K \) \textbf{folds}.
     \item For each fold, fit the \textbf{PLS model} using the first \( k \) latent variables and compute the prediction error on the held-out data.
     \item Compute the \textbf{CV-MSE} for each \( k \):
-    \[
+    \begin{equation}
     \text{CV-MSE}(k) = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_{-i,k})^2
-    \]
+    \end{equation}
     \item Select \( k^* \) that minimizes \(\text{CV-MSE}(k)\):
-    \[
+    \begin{equation}
     k^* = \arg\min_k \text{CV-MSE}(k)
-    \]
+    \end{equation}
 \end{enumerate}
 
 Since PLS incorporates \( Y \) in selecting components, it is expected to achieve lower CV-MSE compared to PCR for a given dataset, particularly when \( X \) and \( Y \) are highly correlated.
