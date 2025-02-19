@@ -6,6 +6,7 @@
 \usepackage{setspace}
 \usepackage{xcolor}
 \usepackage{multicol}
+\usepackage{multirow}
 \usepackage{float}
 \usepackage{subcaption} 
 \usepackage{amsmath}
@@ -729,6 +730,61 @@ Additionally, standard regression techniques such as Ordinary Least Squares (OLS
     \caption{Actual and prediction models performance}
     \label{fig:NIR_analysis}
 \end{figure}
+
+
+\newpage
+\subsection{Quantitative Results}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Methods & Optimal components & Avg CV MSE of prediction & Dataset: Multicollinearity level \\
+        \hline
+        OLS & NA & 0.0106 & \multirow{3}{*}{No multicollinearity} \\
+        PCR & 10 & 0.0106 &  \\
+        PLS & 10 & 0.0106 &  \\
+        \hline
+        OLS & NA & 1.0642 & \multirow{3}{*}{Moderate} \\        
+        PCR & 5 & 1.0477 &  \\
+        PLS & 3 & 1.0477 &  \\
+        \hline
+        OLS & NA & 1.4639 & \multirow{3}{*}{Severe} \\
+        PCR & 3 & 1.1452 &  \\
+        PLS & 3 & 1.1492 &  \\ 
+        \hline  
+        OLS & NA & NA & \multirow{3}{*}{NIR spectroscopy data} \\
+        PCR & 15 & 0.0898 &  \\
+        PLS & 12 & 0.0849 &  \\ 
+        \hline
+    \end{tabular}
+    \caption{Prediction accuracy and optimal components across different multicollinearity levels}
+    \label{tab:multicollinearity_comparison}
+\end{table}
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Methods & Avg MSE of regression coefficients &  $\text{Bias}^2$ & Variance & Dataset: Multicollinearity level \\
+        \hline
+        OLS & 0.0001 & 0.0 & 0.0001 & \multirow{3}{*}{No multicollinearity} \\
+        PCR & 0.0063 & 0.0 & 0.0063 &  \\
+        PLS & 0.0001 & 0.0 & 0.0001 &  \\
+        \hline
+        OLS & 0.6598 & 0.0002 & 0.6596 & \multirow{3}{*}{Moderate} \\        
+        PCR & 0.2414 & 0.2334 & 0.0080 &  \\
+        PLS & 0.2305 & 0.2285 & 0.0020 &  \\
+        \hline
+        OLS & 12.7383 & 0.0072 & 12.7310 & \multirow{3}{*}{Severe} \\
+        PCR & 0.5993 & 0.4221 & 0.1772 &  \\
+        PLS & 0.4118 & 0.2719 & 0.1400 &  \\ 
+        \hline
+    \end{tabular}
+    \caption{MSE coefficient decomposition across different different multicollinearity levels}
+    \label{tab:Stability_analysis}
+\end{table}
 
 
 \printbibliography
