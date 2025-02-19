@@ -2,9 +2,9 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {section}{\numberline {2}Theory}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Principal Component Regression (PCR)}{2}{subsection.2.1}%
-\contentsline {paragraph}{Mathematical Formulation}{2}{section*.2}%
+\contentsline {paragraph}{Mathematical Formulation}{3}{section*.2}%
 \contentsline {paragraph}{Unsupervised Nature of PCR}{3}{section*.3}%
-\contentsline {paragraph}{Variance Reduction and Bias in PCR}{3}{section*.5}%
+\contentsline {paragraph}{Variance Reduction and Bias in PCR}{4}{section*.5}%
 \contentsline {subsection}{\numberline {2.2}Partial Least Squares (PLS)}{4}{subsection.2.2}%
 \contentsline {paragraph}{Mathematical Formulation}{5}{section*.7}%
 \contentsline {paragraph}{Bias-Variance Tradeoff in PLS}{5}{section*.8}%

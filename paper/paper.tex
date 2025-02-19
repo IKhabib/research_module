@@ -94,6 +94,7 @@ Principal Component Regression (PCR) is a widely used statistical technique that
 
 PCR is an effective tool for dealing with multicollinearity, it is important to note that it is an unsupervised method, meaning that the principal components are chosen solely based on variance in the predictor space, without considering the response variable \( Y \). This characteristic distinguishes it from methods like Partial Least Squares (PLS), which optimize component selection based on predictive relevance to \( Y \).
 
+\newpage
 \paragraph{Mathematical Formulation} \ \
 
 The key steps of PCR are as follows:
@@ -138,6 +139,7 @@ Since \( V \) is computed purely from \( X \), it does not incorporate \( Y \). 
     \label{fig:PCR_analysis}
 \end{figure}
 
+\newpage
 \paragraph{Variance Reduction and Bias in PCR}  \ \
 
 A key feature of PCR is its ability to reduce variance in estimated coefficients by using only first \( k \) principal components and eliminating components associated with small eigenvalues:
@@ -173,7 +175,7 @@ Principal Component Regression provides a robust approach for handling multicoll
 
 Partial Least Squares (PLS) is a regression technique specifically designed to handle high-dimensional datasets where multicollinearity and overfitting pose challenges to traditional regression methods. Developed by Herman Wold in the 1960s, PLS integrates elements of dimensionality reduction with regression, making it an effective tool for cases where the number of predictors (\( p \)) is large relative to the number of observations (\( n \)), or where predictors are highly correlated.
 
-PLS constructs latent variables (LVs) that maximize the covariance between the predictor (\(X\)) and response (\(Y\)) matrices. Unlike Principal Component Regression (PCR), which selects components based on variance in \( X \) without considering \( Y \), PLS selects components that are most relevant for predicting \( Y \). This \textbf{supervised} approach makes PLS more effective than PCR when the primary goal is to improve prediction accuracy rather than just reducing dimensionality.
+PLS constructs latent variables (LVs) that maximize the covariance between the predictor (\(X\)) and response (\(Y\)) matrices (Figure 2). Unlike Principal Component Regression (PCR), which selects components based on variance in \( X \) without considering \( Y \), PLS selects components that are most relevant for predicting \( Y \). This \textbf{supervised} approach makes PLS more effective than PCR when the primary goal is to improve prediction accuracy rather than just reducing dimensionality.
 
 The advantages of PLS make it widely applicable in fields such as chemometrics, finance, genomics, and spectroscopy, where data often exhibit strong collinearities and high dimensionality. By incorporating response information directly into the component selection process, PLS ensures that selected components remain relevant for prediction, reducing the risk of omitting important information.
 
@@ -215,7 +217,7 @@ Extracting first \( k \) PLS components:
 \begin{equation}
 T_k = XW_k
 \end{equation}
-where \(W_k \) contains the first \( k \) PLS weight vectors that capture the most covariance between \( X \) and \( Y \).
+where \(W_k \) contains the first \( k \) PLS weight vectors that capture the most covariance between \( X \) and \( Y \) (Figure 2).
 
 Estimating regression coefficients in the latent space:
  \begin{equation}
@@ -307,11 +309,11 @@ An alternative to NIPALS is the SIMPLS (Statistically Inspired Modification of P
 SIMPLS is preferred when computational efficiency is a concern, especially for very large datasets. Both methods produce the same final PLS regression coefficients, but their computation methods differ.
 
 \subsection{Selection of the Optimal Number of Components in PCR and PLS}
-A crucial aspect of applying PCR and PLS effectively is determining the appropriate number of components (\( k \)) to retain. Selecting too few components may result in underfitting, where important predictive information is lost. Conversely, retaining too many components can lead to overfitting, reducing the generalization ability of the model. In this section we will consider several methods for selecting the optimal number of components in PCR and PLS.
+A crucial aspect of applying PCR and PLS effectively is determining the appropriate number of components (\( k \)) to retain (Figure 2). Selecting too few components may result in underfitting, where important predictive information is lost. Conversely, retaining too many components can lead to overfitting, reducing the generalization ability of the model. In this section we will consider several methods for selecting the optimal number of components in PCR and PLS.
 
 \paragraph {Elbow Method} \ \
 
-The Elbow Method is widely used for selecting the optimal number of components in both Principal Component Regression (PCR) and Partial Least Squares (PLS). The method involves plotting a performance metric—such as cumulative explained variance for PCR or cumulative explained covariance for PLS—against the number of components. The optimal number of components is chosen at the "elbow point", where the marginal gain in variance or covariance explained diminishes significantly.
+The Elbow Method is widely used for selecting the optimal number of components in both Principal Component Regression (PCR) and Partial Least Squares (PLS). The method involves plotting a performance metric—such as cumulative explained variance for PCR or cumulative explained covariance for PLS—against the number of components (Figures 1 and 2). The optimal number of components is chosen at the "elbow point", where the marginal gain in variance or covariance explained diminishes significantly.
 
 In Principal Component Regression (PCR), component selection is based on Principal Component Analysis (PCA), which transforms the original predictor space into a set of orthogonal components that explain the variance in \( X \). Since PCR does not consider the response variable \( Y \) in component selection, it relies on the cumulative explained variance of the predictors.
 
@@ -344,6 +346,7 @@ indicating that at least 90\% of the total covariance between \( X \) and \( Y \
 The Elbow Method provides a simple yet effective means of selecting \( k \), but its effectiveness depends on the dataset. If the "elbow" is not clearly visible, alternative methods such as the \textbf{Needle Algorithm} or \textbf{Cross-Validation (CV)} should be used to refine component selection.
 
 \paragraph {Needle Algorithm} \ \
+
 The Needle Algorithm is an alternative method for determining the optimal number of components, which provides a formalized way of detecting the point beyond which additional components contribute negligibly to the model. It is particularly useful when the variance or covariance decay is gradual, making the elbow point ambiguous.
 
 In PCR, The Needle Algorithm identifies \( k \) by examining the second derivative of the cumulative explained variance function. Mathematically, the proportion of variance explained by the first \( k \) components is:
@@ -429,12 +432,7 @@ The CV procedure for PLS follows the same general steps as in PCR:
 
 Since PLS incorporates \( Y \) in selecting components, it is expected to achieve lower optimal \( k^* \) and lower CV-MSE compared to PCR for a given dataset, particularly when \( X \) and \( Y \) are highly correlated.
 
-While cross-validation is the most rigorous method for selecting \( k \), it has some practical considerations:
-\begin{itemize}
-    \item \textbf{Computational Cost}: Cross-validation is computationally expensive since it requires training multiple models for different values of \( k \) across multiple folds.
-    \item \textbf{Bias-Variance Tradeoff}: Smaller \( k \) values lead to higher bias, while larger \( k \) values lead to higher variance. CV helps find the optimal balance.
-    \item \textbf{Choice of \( K \)}: Typically, \( K = 5 \) or \( K = 10 \) is used. A smaller \( K \) reduces computation time, but larger \( K \) provides a more reliable error estimate.
-\end{itemize}
+Cross-validation is the most rigorous method for selecting $k$, but it comes with some practical considerations. One major concern is computational cost, as it requires training multiple models for different values of $k$ across several folds, making the process resource-intensive. Additionally, cross-validation plays a crucial role in managing the bias-variance tradeoff. Smaller values of $k$ tend to introduce higher bias, whereas larger values lead to increased variance. The goal is to find an optimal balance between these two factors. In practice, common choices for $k$ are 5 or 10. While opting for a smaller $k$ can reduce computation time, a larger $k$ generally provides a more reliable error estimate.
 
 The choice of \( k \) should be guided by a combination of these methods, balancing the need for variance retention and predictive accuracy. In empirical applications, cross-validation is typically preferred due to its ability to optimize for prediction error directly, therefore CV is applied in our simulations and empirical estimation.
 
