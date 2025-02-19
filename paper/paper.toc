@@ -23,29 +23,22 @@
 \contentsline {subsection}{\numberline {3.3}Simulation Results: Moderate Multicollinearity Dataset}{16}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Simulation Results: Severe Multicollinearity with Low Observations}{17}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Analysis of NIR Data: Corn Moisture Prediction Using PLS and PCR}{18}{section.4}%
-\contentsline {paragraph}{Dataset and Methodology}{18}{section*.18}%
-\contentsline {paragraph}{Results and Analysis }{19}{section*.20}%
+\contentsline {paragraph}{Dataset description}{18}{section*.18}%
+\contentsline {paragraph}{Results and Analysis }{18}{section*.20}%
 \contentsline {paragraph}{Summary and Conclusions}{19}{section*.21}%
-\contentsline {section}{\numberline {5}Outlook: Limitations and Possible Extensions}{20}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Limitations of This Study}{20}{subsection.5.1}%
-\contentsline {paragraph}{Limited Comparison with Other Regression Techniques}{20}{section*.22}%
+\contentsline {section}{\numberline {5}Limitations and Possible Extensions}{19}{section.5}%
+\contentsline {paragraph}{Limited Comparison with Other Regression Techniques}{19}{section*.22}%
 \contentsline {paragraph}{Assumptions on Data Distribution}{20}{section*.23}%
 \contentsline {paragraph}{Limited Exploration of Nonlinear Relationships}{20}{section*.24}%
-\contentsline {subsection}{\numberline {5.2}Possible Extensions and Future Research Directions}{20}{subsection.5.2}%
-\contentsline {paragraph}{Hybrid Approaches Combining PCR and PLS}{20}{section*.25}%
-\contentsline {paragraph}{Integration with Machine Learning}{20}{section*.26}%
-\contentsline {paragraph}{Sparse and Robust PLS Variants}{21}{section*.27}%
-\contentsline {paragraph}{Bayesian Extensions}{21}{section*.28}%
-\contentsline {paragraph}{Functional PCR and PLS}{21}{section*.29}%
-\contentsline {section}{\numberline {6}Appendix}{22}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Simulation Results: Classical Dataset (No Multicollinearity}{22}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Simulation Results: Moderate Multicollinearity Dataset}{23}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Simulation Results: Severe Multicollinearity with Low Observations}{25}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Analysis of NIR Data: Corn Moisture Prediction Using PLS and PCR}{26}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Quantitative Results}{28}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}Definitions and proofs}{29}{subsection.6.6}%
-\contentsline {paragraph}{Eckart-Young Theorem for Frobenius Norm}{29}{section*.47}%
-\contentsline {paragraph}{Definition:}{29}{section*.48}%
-\contentsline {paragraph}{Proof:}{29}{section*.49}%
-\contentsline {paragraph}{The Gram-Schmidt Process}{30}{section*.50}%
-\contentsline {section}{\numberline {7}Bibliography}{31}{section.7}%
+\contentsline {section}{\numberline {6}Appendix}{21}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Simulation Results: Classical Dataset (No Multicollinearity}{21}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Simulation Results: Moderate Multicollinearity Dataset}{22}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Simulation Results: Severe Multicollinearity with Low Observations}{24}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Analysis of NIR Data: Corn Moisture Prediction Using PLS and PCR}{25}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Quantitative Results}{27}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Definitions and proofs}{28}{subsection.6.6}%
+\contentsline {paragraph}{Eckart-Young Theorem for Frobenius Norm}{28}{section*.42}%
+\contentsline {paragraph}{Definition:}{28}{section*.43}%
+\contentsline {paragraph}{Proof:}{28}{section*.44}%
+\contentsline {paragraph}{The Gram-Schmidt Process}{29}{section*.45}%
+\contentsline {section}{\numberline {7}Bibliography}{30}{section.7}%

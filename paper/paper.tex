@@ -580,7 +580,7 @@ This dataset highlights the extreme limitations of OLS and demonstrates the impo
 
 \section{Analysis of NIR Data: Corn Moisture Prediction Using PLS and PCR}
 
-\paragraph{Dataset and Methodology} \ \
+\paragraph{Dataset description} \ \
 
 The dataset used in this study consists of NIR spectra collected from 80 corn samples, measured using the mp5 NIR spectrometer. Each spectrum contains 700 data points recorded in the wavelength range of 2498–1100 nm at 2 nm intervals. The target variable, moisture content, serves as the dependent variable. This dataset and methodology align closely with the results reported in the referenced paper, where similar approaches were applied to corn data. The high-dimensional nature of the spectral data makes this a challenging regression problem, particularly due to the presence of collinearity among the predictor variables (Figure 4).
 
@@ -590,10 +590,6 @@ The dataset used in this study consists of NIR spectra collected from 80 corn sa
     \caption{NIR absorption spectra from the Corn Data Set}
     \label{fig:NIR_analysis}
 \end{figure}
-
-To evaluate the effectiveness of different regression techniques under this structure, we compare Principal Component Regression (PCR) and Partial Least Squares (PLS). The high multicollinearity present in NIR spectra makes it necessary to use dimensionality reduction techniques. PLS, due to its supervised nature, selects components that maximize covariance with the response variable, while PCR, which is unsupervised, requires a slightly larger number of components to reach a similar level of predictive performance.
-
-A detailed decomposition of Mean Squared Error (MSE) into its bias and variance components in our simulations illustrates the advantage of using dimensionality reduction (Figure 3). PCR and PLS significantly reduce variance by selecting fewer components, thereby achieving much lower MSE. However, at their optimal component selection points, both PCR and PLS still introduce some bias as a trade-off for reduced variance. This bias, however, is minimal compared to the large variance that would be present if no dimensionality reduction were applied, making PCR and PLS the most suitable approaches for this type of high-dimensional regression problem.
 
 \paragraph{Results and Analysis } \ \
 
@@ -608,36 +604,20 @@ Overall, this study validates that PCR and PLS provide significantly more reliab
 Additionally, standard regression techniques such as Ordinary Least Squares (OLS) cannot be directly applied in this setting due to singularity issues, as the number of predictors is much larger than the number of observations. While modifications such as applying a pseudo-inverse could technically be used to solve the regression problem, it would not help mitigate the noise amplification caused by collinearity. Another approach would be to use Tikhonov regularization, which effectively transforms the OLS formulation into a Ridge regression model by adding a penalty term. However, to avoid additional complexity and ensure comparability across methods, we exclude OLS and its modified forms from the analysis, focusing instead on PCR and PLS as more robust alternatives for handling high-dimensional NIR data.
 
 
-\section{Outlook: Limitations and Possible Extensions}
-
-\subsection{Limitations of This Study}
+\section{Limitations and Possible Extensions}
 
 \paragraph{Limited Comparison with Other Regression Techniques} \ \
 
 This study focuses on Principal Component Regression (PCR) and Partial Least Squares (PLS) but does not compare them with Ridge, Lasso, or Elastic Net Regression, which also address multicollinearity. Ridge uses an L2 penalty for coefficient shrinkage, Lasso enforces sparsity through an L1 penalty, and Elastic Net combines both. Unlike PCR and PLS, which reduce dimensionality discretely, these shrinkage methods optimize continuously. Future research could compare these approaches to provide a broader perspective on their trade-offs.  
 
 \paragraph{Assumptions on Data Distribution} \ \
+
 The study assumes predictor variables follow a normal distribution, whereas real-world data often exhibit skewness, heavy tails, or heteroscedasticity. Since PCR and PLS rely on linear transformations, their performance may degrade under non-Gaussian conditions. Future work could explore robust versions incorporating transformations (e.g., Box-Cox) or heteroscedasticity-aware adaptations.  
 
 \paragraph{Limited Exploration of Nonlinear Relationships} \ \
-PCR and PLS assume linearity between predictors and response variables, limiting their applicability in complex settings like genomics or finance. Nonlinear alternatives, such as Kernel PCA, Kernel PLS, and Deep PLS, could improve predictive power. Future research should evaluate these methods in high-dimensional, nonlinear contexts.  
 
-\subsection{Possible Extensions and Future Research Directions}
+PCR and PLS assume linearity between predictors and response variables, limiting their applicability in complex settings like genomics or finance. Nonlinear alternatives, such as Kernel PCA, Kernel PLS, and Deep PLS, as well as Functional PCR and Functional PLS could improve predictive power. Future research should evaluate these methods in high-dimensional, nonlinear contexts. 
 
-\paragraph{Hybrid Approaches Combining PCR and PLS} \ \
-A hybrid model could integrate PCR’s variance-maximizing properties with PLS’s covariance-maximization to enhance predictive performance. Ensemble-based PCR-PLS approaches may further improve regression outcomes.  
-
-\paragraph{Integration with Machine Learning} \ \
-PCR and PLS could be used as feature extraction methods for machine learning models like Random Forests, SVMs, or Neural Networks. Additionally, incorporating PLS-based features into gradient boosting models (e.g., XGBoost, LightGBM) could improve performance in structured data applications.  
-
-\paragraph{Sparse and Robust PLS Variants} \ \
-Sparse PLS (SPLS) introduces sparsity constraints for improved interpretability, while Robust PLS (RPLS) enhances resilience to outliers and non-Gaussian noise. Optimizing these methods for high-dimensional data remains a promising direction.  
-
-\paragraph{Bayesian Extensions} \ \
-Bayesian PCR (BPCR) and Bayesian PLS (BPLS) integrate probabilistic frameworks, improving uncertainty quantification and robustness in small-sample settings. These extensions could be valuable in bioinformatics, finance, and environmental modeling.  
-
-\paragraph{Functional PCR and PLS} \ \
-For time-series, spectral, and medical imaging data, Functional PCR (fPCR) and Functional PLS (fPLS) extend traditional methods to functional data analysis. Future research could apply these approaches in fields like climate modeling and EEG analysis.  
 \newpage
 
 \section{Appendix}

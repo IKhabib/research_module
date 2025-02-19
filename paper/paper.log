@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.20)  19 FEB 2025 20:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.20)  19 FEB 2025 21:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -757,165 +757,179 @@ File: NIR_first_plot.png Graphic file (type png)
 <use NIR_first_plot.png>
 Package pdftex.def Info: NIR_first_plot.png  used on input line 589.
 (pdftex.def)             Requested size: 435.32422pt x 282.06952pt.
- [18 <./NIR_first_plot.png>] [19] [20] [21]
-<First_plot.png, id=343, 1011.78pt x 722.7pt>
+ [18 <./NIR_first_plot.png>] [19] [20]
+<First_plot.png, id=334, 1011.78pt x 722.7pt>
 File: First_plot.png Graphic file (type png)
 <use First_plot.png>
-Package pdftex.def Info: First_plot.png  used on input line 648.
+Package pdftex.def Info: First_plot.png  used on input line 628.
 (pdftex.def)             Requested size: 435.32422pt x 310.95343pt.
-<Second_plot.png, id=344, 723.1818pt x 393.6306pt>
+<Second_plot.png, id=335, 723.1818pt x 393.6306pt>
 File: Second_plot.png Graphic file (type png)
 <use Second_plot.png>
-Package pdftex.def Info: Second_plot.png  used on input line 655.
+Package pdftex.def Info: Second_plot.png  used on input line 635.
 (pdftex.def)             Requested size: 435.32422pt x 236.95499pt.
-<Third_plot.png, id=345, 1040.688pt x 433.62pt>
+<Third_plot.png, id=336, 1040.688pt x 433.62pt>
 File: Third_plot.png Graphic file (type png)
 <use Third_plot.png>
-Package pdftex.def Info: Third_plot.png  used on input line 662.
+Package pdftex.def Info: Third_plot.png  used on input line 642.
 (pdftex.def)             Requested size: 435.32422pt x 181.38472pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22 <./First_plot.png> <./Second_plot.png>]
-<Fourth_plot.png, id=354, 1437.6912pt x 381.8265pt>
+ [21 <./First_plot.png> <./Second_plot.png>]
+<Fourth_plot.png, id=345, 1437.6912pt x 381.8265pt>
 File: Fourth_plot.png Graphic file (type png)
 <use Fourth_plot.png>
-Package pdftex.def Info: Fourth_plot.png  used on input line 669.
+Package pdftex.def Info: Fourth_plot.png  used on input line 649.
 (pdftex.def)             Requested size: 435.32422pt x 115.60919pt.
-<First_plot_second_simulation.png, id=355, 1011.78pt x 722.7pt>
+<First_plot_second_simulation.png, id=346, 1011.78pt x 722.7pt>
 File: First_plot_second_simulation.png Graphic file (type png)
 <use First_plot_second_simulation.png>
 Package pdftex.def Info: First_plot_second_simulation.png  used on input line 6
-78.
+58.
 (pdftex.def)             Requested size: 435.32422pt x 310.95343pt.
-<Second_plot_second_simulation.png, id=356, 729.4452pt x 393.6306pt>
+<Second_plot_second_simulation.png, id=347, 729.4452pt x 393.6306pt>
 File: Second_plot_second_simulation.png Graphic file (type png)
 <use Second_plot_second_simulation.png>
 Package pdftex.def Info: Second_plot_second_simulation.png  used on input line 
-685.
+665.
 (pdftex.def)             Requested size: 435.32422pt x 234.91284pt.
- [23 <./Third_plot.png> <./Fourth_plot.png> <./First_plot_second_simulation.png
+ [22 <./Third_plot.png> <./Fourth_plot.png> <./First_plot_second_simulation.png
 >]
-<Third_plot_second_simulation.png, id=368, 1040.688pt x 433.62pt>
+<Third_plot_second_simulation.png, id=358, 1040.688pt x 433.62pt>
 File: Third_plot_second_simulation.png Graphic file (type png)
 <use Third_plot_second_simulation.png>
 Package pdftex.def Info: Third_plot_second_simulation.png  used on input line 6
-92.
+72.
 (pdftex.def)             Requested size: 435.32422pt x 181.38472pt.
-<Fourth_plot_second_simulation.png, id=369, 1437.6912pt x 381.8265pt>
+<Fourth_plot_second_simulation.png, id=359, 1437.6912pt x 381.8265pt>
 File: Fourth_plot_second_simulation.png Graphic file (type png)
 <use Fourth_plot_second_simulation.png>
 Package pdftex.def Info: Fourth_plot_second_simulation.png  used on input line 
-699.
+679.
 (pdftex.def)             Requested size: 435.32422pt x 115.60919pt.
-<First_plot_third_simulation.png, id=370, 1011.78pt x 722.7pt>
+<First_plot_third_simulation.png, id=360, 1011.78pt x 722.7pt>
 File: First_plot_third_simulation.png Graphic file (type png)
 <use First_plot_third_simulation.png>
-Package pdftex.def Info: First_plot_third_simulation.png  used on input line 70
+Package pdftex.def Info: First_plot_third_simulation.png  used on input line 68
 8.
 (pdftex.def)             Requested size: 435.32422pt x 310.95343pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24 <./Second_plot_second_simulation.png> <./Third_plot_second_simulation.png>
+ [23 <./Second_plot_second_simulation.png> <./Third_plot_second_simulation.png>
  <./Fourth_plot_second_simulation.png>]
-<Second_plot_third_simulation.png, id=381, 713.5458pt x 393.6306pt>
+<Second_plot_third_simulation.png, id=372, 713.5458pt x 393.6306pt>
 File: Second_plot_third_simulation.png Graphic file (type png)
 <use Second_plot_third_simulation.png>
-Package pdftex.def Info: Second_plot_third_simulation.png  used on input line 7
-15.
+Package pdftex.def Info: Second_plot_third_simulation.png  used on input line 6
+95.
 (pdftex.def)             Requested size: 435.32422pt x 240.15034pt.
-<Third_plot_third_simulation.png, id=382, 1040.688pt x 433.62pt>
+<Third_plot_third_simulation.png, id=373, 1040.688pt x 433.62pt>
 File: Third_plot_third_simulation.png Graphic file (type png)
 <use Third_plot_third_simulation.png>
-Package pdftex.def Info: Third_plot_third_simulation.png  used on input line 72
+Package pdftex.def Info: Third_plot_third_simulation.png  used on input line 70
 2.
 (pdftex.def)             Requested size: 435.32422pt x 181.38472pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25 <./First_plot_third_simulation.png> <./Second_plot_third_simulation.png>]
-<Fourth_plot_third_simulation.png, id=391, 1437.6912pt x 381.8265pt>
+ [24 <./First_plot_third_simulation.png> <./Second_plot_third_simulation.png>]
+<Fourth_plot_third_simulation.png, id=382, 1437.6912pt x 381.8265pt>
 File: Fourth_plot_third_simulation.png Graphic file (type png)
 <use Fourth_plot_third_simulation.png>
 Package pdftex.def Info: Fourth_plot_third_simulation.png  used on input line 7
-29.
+09.
 (pdftex.def)             Requested size: 435.32422pt x 115.60919pt.
-<NIR_second_plot.png, id=392, 619.3539pt x 397.2441pt>
+<NIR_second_plot.png, id=383, 619.3539pt x 397.2441pt>
 File: NIR_second_plot.png Graphic file (type png)
 <use NIR_second_plot.png>
-Package pdftex.def Info: NIR_second_plot.png  used on input line 738.
+Package pdftex.def Info: NIR_second_plot.png  used on input line 718.
 (pdftex.def)             Requested size: 435.32422pt x 279.20851pt.
-<NIR_third_plot.png, id=393, 619.3539pt x 397.2441pt>
+<NIR_third_plot.png, id=384, 619.3539pt x 397.2441pt>
 File: NIR_third_plot.png Graphic file (type png)
 <use NIR_third_plot.png>
-Package pdftex.def Info: NIR_third_plot.png  used on input line 745.
+Package pdftex.def Info: NIR_third_plot.png  used on input line 725.
 (pdftex.def)             Requested size: 435.32422pt x 279.20851pt.
 
 Underfull \vbox (badness 4229) has occurred while \output is active []
 
- [26 <./Third_plot_third_simulation.png> <./Fourth_plot_third_simulation.png> <
+ [25 <./Third_plot_third_simulation.png> <./Fourth_plot_third_simulation.png> <
 ./NIR_second_plot.png>]
-<NIR_fifth_plot.png, id=404, 626.34pt x 397.2441pt>
+<NIR_fifth_plot.png, id=395, 626.34pt x 397.2441pt>
 File: NIR_fifth_plot.png Graphic file (type png)
 <use NIR_fifth_plot.png>
-Package pdftex.def Info: NIR_fifth_plot.png  used on input line 752.
+Package pdftex.def Info: NIR_fifth_plot.png  used on input line 732.
 (pdftex.def)             Requested size: 435.32422pt x 276.10506pt.
- [27 <./NIR_third_plot.png> <./NIR_fifth_plot.png>]
-Overfull \hbox (4.08368pt too wide) in paragraph at lines 790--807
+ [26 <./NIR_third_plot.png> <./NIR_fifth_plot.png>]
+Overfull \hbox (4.08368pt too wide) in paragraph at lines 770--787
  [][] 
  []
 
-[28] [29] [30]
-Underfull \hbox (badness 2205) in paragraph at lines 912--913
+[27] [28] [29]
+Underfull \hbox (badness 2205) in paragraph at lines 892--893
 []\OT1/cmr/m/n/10.95 (+20) Greenberg, Ed-ward. (1975). Min-i-mum vari-ance prop
 -er-ties of prin-ci-pal com-po-nent re-
  []
 
 
-Underfull \hbox (badness 6252) in paragraph at lines 912--913
+Underfull \hbox (badness 6252) in paragraph at lines 892--893
 \OT1/cmr/m/n/10.95 (+20) gres-sion. \OT1/cmr/m/it/10.95 (+20) Jour-nal of the A
 mer-i-can Sta-tis-ti-cal As-so-ci-a-tion\OT1/cmr/m/n/10.95 (+20) , 70(349), 194
 {197. DOI:
  []
 
-[31] (./paper.aux)
+[30] (./paper.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 4C35E8E5DA21C324A39119799F264197;5644.
+
+Package rerunfilecheck Warning: File `paper.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `paper.out':
+(rerunfilecheck)             Before: 4C35E8E5DA21C324A39119799F264197;5644
+(rerunfilecheck)             After:  07BA9D22C778733924DA74AED520EC68;5081.
  ) 
 Here is how much of TeX's memory you used:
- 15806 strings out of 478268
- 256161 string characters out of 5846346
+ 15798 strings out of 478268
+ 256081 string characters out of 5846346
  609663 words of memory out of 5000000
  33409 multiletter control sequences out of 15000+600000
- 484314 words of font info for 150 fonts, out of 8000000 for 9000
+ 484254 words of font info for 149 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,12n,77p,1481b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
-r/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
-/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
-ocal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
-al/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
-/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
-exlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
-ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
-/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/20
-22/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/202
-2/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/t
-exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/20
-22/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on paper.pdf (33 pages, 4118285 bytes).
+
+pdfTeX warning (dest): name{subsection.5.2} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.5.1} has been referenced but does not ex
+ist, replaced by a fixed one
+
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
+local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/l
+ocal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/loc
+al/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local
+/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/t
+exlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/tex
+live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texliv
+e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
+022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022
+/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on paper.pdf (32 pages, 4114949 bytes).
 PDF statistics:
- 592 PDF objects out of 1000 (max. 8388607)
- 476 compressed objects within 5 object streams
- 202 named destinations out of 1000 (max. 500000)
+ 582 PDF objects out of 1000 (max. 8388607)
+ 467 compressed objects within 5 object streams
+ 196 named destinations out of 1000 (max. 500000)
  35098 words of extra memory for PDF output out of 35830 (max. 10000000)
 
