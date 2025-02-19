@@ -7,7 +7,7 @@
 \contentsline {paragraph}{Variance Reduction and Bias in PCR}{4}{section*.5}%
 \contentsline {subsection}{\numberline {2.2}Partial Least Squares (PLS)}{4}{subsection.2.2}%
 \contentsline {paragraph}{Mathematical Formulation}{5}{section*.7}%
-\contentsline {paragraph}{Bias-Variance Tradeoff in PLS}{5}{section*.8}%
+\contentsline {paragraph}{Bias-Variance Tradeoff in PLS}{6}{section*.8}%
 \contentsline {paragraph}{NIPALS Algorithm}{6}{section*.9}%
 \contentsline {paragraph}{SIMPLS Algorithm}{7}{section*.10}%
 \contentsline {subsection}{\numberline {2.3}Selection of the Optimal Number of Components in PCR and PLS}{8}{subsection.2.3}%

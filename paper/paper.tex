@@ -64,7 +64,7 @@ One of the primary concerns in high-dimensional regression is multicollinearityâ
 To address these issues, researchers have developed dimension reduction techniques that aim to transform high-dimensional predictor spaces into lower-dimensional representations while preserving essential information. Two widely used techniques in this context are Principal Component Regression (PCR) and Partial Least Squares (PLS). These methods construct new predictor variables, referred to as components, that capture the most relevant variation in the dataset.
 The use of PCR and PLS is prevalent in various disciplines, including chemometrics, finance, genomics, and environmental science, where datasets often contain a large number of correlated predictors. While both methods offer solutions to the high-dimensional regression problem, they differ in their approach, underlying assumptions, and effectiveness in different scenarios.
 
-This paper provides a comprehensive analysis of  Principal Component Regression (PCR) and Partial Least Squares (PLS), focusing on their theoretical foundations, practical implementations, and empirical performance evaluation across various regression settings. Specifically, in Section 2 we investigate the mathematical principles underlying these methods, highlighting their similarities and differences in handling multicollinearity and dimensionality reduction. A key focus in Section 3 is on understanding the bias-variance trade-off by performing a detailed Mean Squared Error (MSE) decomposition of regression coefficients, as well as evaluating predictive performance through Cross-Validation (CV) MSE. The study systematically compares these methods in different scenarios. To further assess model stability and generalization ability, a Monte Carlo simulation is conducted using synthetic datasets, allowing for an in-depth examination of performance under varying levels of correlation. Additionally, in Section 4 both PCR and PLS are applied to real-world regression problems, including Near-Infrared (NIR) Spectroscopy for Moisture Prediction, to evaluate their practical utility and interpretability. Finally, in Section 5 we discuss the strengths and weaknesses of each method, providing guidance on when to prefer PCR over PLS (or vice versa) and exploring potential hybrid approaches that integrate the advantages of both techniques.
+This paper provides a comprehensive analysis of  Principal Component Regression (PCR) and Partial Least Squares (PLS), focusing on their theoretical foundations, practical implementations, and empirical performance evaluation across various regression settings. Specifically, in Section 2 we investigate the mathematical principles underlying these methods, highlighting their similarities and differences in handling multicollinearity and dimensionality reduction. A key focus in Section 3 is on understanding the bias-variance trade-off by performing a detailed Mean Squared Error (MSE) decomposition of regression coefficients, as well as evaluating predictive performance through Cross-Validation (CV) MSE. The study systematically compares these methods in different scenarios. To further assess model stability and generalization ability, a Monte Carlo simulation is conducted using synthetic datasets, allowing for an in-depth examination of performance under varying levels of correlation. Additionally, in Section 4 both PCR and PLS are applied to real-world regression problems, including Near-Infrared (NIR) Spectroscopy for Moisture Prediction, to evaluate their practical utility and interpretability. Finally, in Section 5 we describe the limitations of our approach and give an outlook on possible extensions for this paper.
 \newpage
 
 \section{Theory}
@@ -206,7 +206,7 @@ The final regression model is then expressed in terms of these components:
 Y = T \delta + \epsilon
 \end{equation}
 where \( \delta \) represents the regression coefficients for the latent variables.
-
+\newpage
 \paragraph {Bias-Variance Tradeoff in PLS} \ \
 
 Like PCR, PLS reduces variance by using only the first k components. However, PLS retains predictive power better than PCR because it selects components based on their relevance to Y. 
@@ -608,15 +608,15 @@ Additionally, standard regression techniques such as Ordinary Least Squares (OLS
 
 \paragraph{Limited Comparison with Other Regression Techniques} \ \
 
-This study focuses on Principal Component Regression (PCR) and Partial Least Squares (PLS) but does not compare them with Ridge, Lasso, or Elastic Net Regression, which also address multicollinearity. Ridge uses an L2 penalty for coefficient shrinkage, Lasso enforces sparsity through an L1 penalty, and Elastic Net combines both. Unlike PCR and PLS, which reduce dimensionality discretely, these shrinkage methods optimize continuously. Future research could compare these approaches to provide a broader perspective on their trade-offs.  
+Our work focuses on Principal Component Regression (PCR) and Partial Least Squares (PLS) but does not compare them with Ridge, Lasso, or Elastic Net Regression, which also address multicollinearity. Ridge uses an L2 penalty for coefficient shrinkage, Lasso enforces sparsity through an L1 penalty, and Elastic Net combines both. Unlike PCR and PLS, which reduce dimensionality discretely, these shrinkage methods optimize continuously.  
 
 \paragraph{Assumptions on Data Distribution} \ \
 
-The study assumes predictor variables follow a normal distribution, whereas real-world data often exhibit skewness, heavy tails, or heteroscedasticity. Since PCR and PLS rely on linear transformations, their performance may degrade under non-Gaussian conditions. Future work could explore robust versions incorporating transformations (e.g., Box-Cox) or heteroscedasticity-aware adaptations.  
+We have an assumption that predictor variables follow a normal distribution, whereas real-world data often exhibit skewness, heavy tails, or heteroscedasticity. Since PCR and PLS rely on linear transformations, their performance may degrade under non-Gaussian conditions. Thus, further work could explore robust versions incorporating transformations (e.g., Box-Cox) or heteroscedasticity-aware adaptations.  
 
 \paragraph{Limited Exploration of Nonlinear Relationships} \ \
 
-PCR and PLS assume linearity between predictors and response variables, limiting their applicability in complex settings like genomics or finance. Nonlinear alternatives, such as Kernel PCA, Kernel PLS, and Deep PLS, as well as Functional PCR and Functional PLS could improve predictive power. Future research should evaluate these methods in high-dimensional, nonlinear contexts.
+PCR and PLS assume linearity between predictors and response variables, limiting their applicability in complex settings like genomics or finance. Nonlinear alternatives, such as Kernel PCA, Kernel PLS, and Deep PLS, as well as Functional PCR and Functional PLS could improve predictive power.
 
 \newpage
 
