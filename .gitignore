@@ -1,0 +1,41 @@
+# Ignore all compiled files
+*.out
+*.o
+*.exe
+
+# Ignore temporary files
+*.log
+*.tmp
+*.swp
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore LaTeX auxiliary files
+*.aux
+*.bbl
+*.blg
+*.log
+*.lof
+*.lot
+*.toc
+*.out
+*.synctex.gz
+*.bcf
+*.run.xml
+# Ignore dataset and large files
+data/
+*.csv
+*.tsv
+*.json
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore environment settings
+.env
+.vscode/
+.idea/
