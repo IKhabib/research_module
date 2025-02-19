@@ -16,18 +16,13 @@
 \usepackage{overpic}
 \usepackage[font=small,skip=2pt]{caption}
 
-\usepackage[
-backend=biber,
-style=authoryear-comp,
-]{biblatex}
-
 \newcommand{\independent}{\perp\!\!\!\!\perp} 
 
-\addbibresource{RMbibliography.bib}
 \onehalfspacing
 \parindent=0pt
 \usepackage{pagecolor}
 \pagecolor{white}
+
 \begin{document}
 
 \begin{titlepage}
@@ -731,7 +726,6 @@ Additionally, standard regression techniques such as Ordinary Least Squares (OLS
     \label{fig:NIR_analysis}
 \end{figure}
 
-
 \newpage
 \subsection{Quantitative Results}
 
@@ -785,9 +779,46 @@ Additionally, standard regression techniques such as Ordinary Least Squares (OLS
     \caption{MSE coefficient decomposition across different different multicollinearity levels}
     \label{tab:Stability_analysis}
 \end{table}
+\newpage
 
+\begin{thebibliography}{99}
 
-\printbibliography
+\bibitem{Hastie2009}
+Hastie, Trevor, Tibshirani, Robert, and Friedman, Jerome. (2009). \textit{The Elements of Statistical Learning: Data Mining, Inference, and Prediction}. Springer. DOI: \href{https://doi.org/10.1007/978-0-387-84858-7}{10.1007/978-0-387-84858-7}
 
+\bibitem{James2021}
+James, Gareth, Witten, Daniela, Hastie, Trevor, and Tibshirani, Robert. (2021). \textit{An Introduction to Statistical Learning: with Applications in R}. Springer. DOI: \href{https://doi.org/10.1007/978-1-0716-1418-1}{10.1007/978-1-0716-1418-1}
+
+\bibitem{Brunton2019}
+Brunton, Steven L., and Kutz, J. Nathan. (2019). \textit{Data-Driven Science and Engineering: Machine Learning, Dynamical Systems, and Control}. Cambridge University Press. DOI: \href{https://doi.org/10.1017/9781108380690}{10.1017/9781108380690}
+
+\bibitem{Johnstone2009}
+Johnstone, Iain M., and Lu, Arthur Yu. (2009). On consistency and sparsity for principal components analysis in high dimensions. \textit{Journal of the American Statistical Association}, 104(486), 682–693. DOI: \href{https://doi.org/10.1198/jasa.2009.0121}{10.1198/jasa.2009.0121}
+
+\bibitem{Greenberg1975}
+Greenberg, Edward. (1975). Minimum variance properties of principal component regression. \textit{Journal of the American Statistical Association}, 70(349), 194–197. DOI: \href{https://doi.org/10.1080/01621459.1975.10480287}{10.1080/01621459.1975.10480287}
+
+\bibitem{Agarwal2021}
+Agarwal, Anish, Shah, Devavrat, Shen, Dennis, and Song, Dogyoon. (2021). On robustness of principal component regression. \textit{Journal of the American Statistical Association}, 116(536), 1731–1745. DOI: \href{https://doi.org/10.1080/01621459.2021.1928513}{10.1080/01621459.2021.1928513}
+
+\bibitem{Rosipal2006}
+Rosipal, Roman, and Krämer, Nicole. (2006). Overview and recent advances in partial least squares. In Saunders, Craig, Grobelnik, Marko, Gunn, Steve, and Shawe-Taylor, John (Eds.), \textit{Subspace, Latent Structure and Feature Selection} (pp. 34–51). Springer, Berlin, Heidelberg. DOI: \href{https://doi.org/10.1007/11752790_2}{10.1007/11752790\_2}
+
+\bibitem{Garthwaite1994}
+Garthwaite, Paul H. (1994). An interpretation of partial least squares. \textit{Journal of the American Statistical Association}, 89(425), 122–127. DOI: \href{https://doi.org/10.1080/01621459.1994.10476452}{10.1080/01621459.1994.10476452}
+
+\bibitem{Goktas2020}
+Göktaş, Atila, and Akkuş, Özge. (2020). Comparison of partial least squares with other prediction methods via generated data. \textit{Journal of Statistical Computation and Simulation}, 90(16), 3009–3024. DOI: \href{https://doi.org/10.1080/00949655.2020.1793342}{10.1080/00949655.2020.1793342}
+
+\bibitem{Vinzi2013}
+Esposito Vinzi, Vincenzo, and Russolillo, Giorgio. (2013). Partial least squares algorithms and methods. \textit{WIREs Computational Statistics}, 5(1), 1–19. DOI: \href{https://doi.org/10.1002/wics.1239}{10.1002/wics.1239}
+
+\bibitem{deJong1993}
+de Jong, Sijmen. (1993). SIMPLS: An alternative approach to partial least squares regression. \textit{Chemometrics and Intelligent Laboratory Systems}, 18(3), 251–263. DOI: \href{https://doi.org/10.1016/0169-7439(93)85002-X}{10.1016/0169-7439(93)85002-X}
+
+\bibitem{Lin2016}
+Lin, You-Wu, Deng, Bai-Chuan, Xu, Qing-Song, Yun, Yong-Huan, and Liang, Yi-Zeng. (2016). The equivalence of partial least squares and principal component regression in the sufficient dimension reduction framework. \textit{Chemometrics and Intelligent Laboratory Systems}, 150, 58–64. DOI: \href{https://doi.org/10.1016/j.chemolab.2015.11.003}{10.1016/j.chemolab.2015.11.003}
+
+\end{thebibliography}
 
 \end{document}
