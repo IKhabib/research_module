@@ -582,7 +582,13 @@ Results of all three scenarios highlight the extreme limitations of OLS and demo
 
 \paragraph{Dataset description} \ \
 
-The dataset used in this study consists of NIR spectra collected from 80 corn samples, measured using the mp5 NIR spectrometer. Each spectrum contains 700 data points recorded in the wavelength range of 2498–1100 nm at 2 nm intervals. The target variable, moisture content, serves as the dependent variable. This dataset and methodology align closely with the results reported in the referenced paper, where similar approaches were applied to corn data. The high-dimensional nature of the spectral data makes this a challenging regression problem, particularly due to the presence of collinearity among the predictor variables (Figure 4).
+The dataset used in this study consists of NIR spectra collected from 80 corn samples, measured using the mp5 NIR spectrometer. Each spectrum contains 700 data points recorded in the wavelength range of 2498–1100 nm at 2 nm intervals\footnote{This dataset is available at https://eigenvector.com/resources/data-sets/}. The target variable, moisture content, serves as the dependent variable. This dataset and methodology align closely with the results reported in the referenced paper, where similar approaches were applied to corn data [12]. The high-dimensional nature of the spectral data makes this a challenging regression problem, particularly due to the presence of collinearity among the predictor variables (Figure 4).
+
+\paragraph{Results and Analysis } \ \
+
+In our empirical part cross-validation is used to determine the optimal number of components for PCR and PLS. The results show a sharp decrease in MSE as the number of components increases, after which the performance stabilizes. In our training data, PLS achieves its optimal performance with fewer components, while PCR requires slightly more components to reach the same level (Figure 17). While in test data, we can observe that beyond a certain threshold, increasing the number of components leads to overfitting in PLS, causing MSE to rise. This reinforces the importance of selecting the appropriate number of components to balance bias and variance. Meanwhile, PCR is less affected by overfitting due to its unsupervised nature. After reaching its optimal level, PCR performance starts fluctuating instead of consistently increasing with the addition of more components, as it does not rely directly on maximizing covariance with the response variable (Figure 18).
+
+Examining predictive accuracy of PCR and PLS predictions, we can see that both methods are close to the actual values, demonstrating their ability to capture meaningful patterns in the data. Since PLS selects components in a way that directly relates to the response variable, it achieves a good predictive fit with fewer components. However, when PCR is allowed to utilize a sufficient number of components, it reaches a similar performance level (Figure 19).
 
 \begin{figure}[H]
     \centering
@@ -590,12 +596,6 @@ The dataset used in this study consists of NIR spectra collected from 80 corn sa
     \caption{NIR absorption spectra from the Corn Data Set}
     \label{fig:NIR_analysis}
 \end{figure}
-
-\paragraph{Results and Analysis } \ \
-
-In our empirical part cross-validation is used to determine the optimal number of components for PCR and PLS. The results show a sharp decrease in MSE as the number of components increases, after which the performance stabilizes. In our training data, PLS achieves its optimal performance with fewer components, while PCR requires slightly more components to reach the same level (Figure 17). While in test data, we can observe that beyond a certain threshold, increasing the number of components leads to overfitting in PLS, causing MSE to rise. This reinforces the importance of selecting the appropriate number of components to balance bias and variance. Meanwhile, PCR is less affected by overfitting due to its unsupervised nature. After reaching its optimal level, PCR performance starts fluctuating instead of consistently increasing with the addition of more components, as it does not rely directly on maximizing covariance with the response variable (Figure 18).
-
-Examining predictive accuracy of PCR and PLS predictions, we can see that both methods are close to the actual values, demonstrating their ability to capture meaningful patterns in the data. Since PLS selects components in a way that directly relates to the response variable, it achieves a good predictive fit with fewer components. However, when PCR is allowed to utilize a sufficient number of components, it reaches a similar performance level (Figure 19).
 
 \paragraph{Summary and Conclusions} \ \
 
