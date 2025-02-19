@@ -24,11 +24,11 @@
 \contentsline {subsection}{\numberline {3.4}Simulation Results: Severe Multicollinearity with Low Observations}{17}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Analysis of NIR Data: Corn Moisture Prediction Using PLS and PCR}{18}{section.4}%
 \contentsline {paragraph}{Dataset description}{18}{section*.18}%
-\contentsline {paragraph}{Results and Analysis }{18}{section*.19}%
+\contentsline {paragraph}{Results and Analysis }{18}{section*.20}%
 \contentsline {paragraph}{Summary and Conclusions}{19}{section*.21}%
-\contentsline {section}{\numberline {5}Limitations and Possible Extensions}{20}{section.5}%
-\contentsline {paragraph}{Limited Comparison with Other Regression Techniques}{20}{section*.22}%
-\contentsline {paragraph}{Assumptions on Data Distribution}{20}{section*.23}%
+\contentsline {section}{\numberline {5}Limitations and Possible Extensions}{19}{section.5}%
+\contentsline {paragraph}{Limited Comparison with Other Regression Techniques}{19}{section*.22}%
+\contentsline {paragraph}{Assumptions on Data Distribution}{19}{section*.23}%
 \contentsline {paragraph}{Limited Exploration of Nonlinear Relationships}{20}{section*.24}%
 \contentsline {section}{\numberline {6}Appendix}{21}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Simulation Results: Classical Dataset (No Multicollinearity}{21}{subsection.6.1}%
