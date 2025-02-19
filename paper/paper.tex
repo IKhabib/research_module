@@ -612,6 +612,38 @@ Overall, this study validates that PCR and PLS provide significantly more reliab
 Additionally, standard regression techniques such as Ordinary Least Squares (OLS) cannot be directly applied in this setting due to singularity issues, as the number of predictors is much larger than the number of observations. While modifications such as applying a pseudo-inverse could technically be used to solve the regression problem, it would not help mitigate the noise amplification caused by collinearity. Another approach would be to use Tikhonov regularization, which effectively transforms the OLS formulation into a Ridge regression model by adding a penalty term. However, to avoid additional complexity and ensure comparability across methods, we exclude OLS and its modified forms from the analysis, focusing instead on PCR and PLS as more robust alternatives for handling high-dimensional NIR data.
 \newpage
 
+\section{Outlook: Limitations and Possible Extensions}
+
+\subsection{Limitations of This Study}
+
+\paragraph{Limited Comparison with Other Regression Techniques} \ \
+
+This study focuses on Principal Component Regression (PCR) and Partial Least Squares (PLS) but does not compare them with Ridge, Lasso, or Elastic Net Regression, which also address multicollinearity. Ridge uses an L2 penalty for coefficient shrinkage, Lasso enforces sparsity through an L1 penalty, and Elastic Net combines both. Unlike PCR and PLS, which reduce dimensionality discretely, these shrinkage methods optimize continuously. Future research could compare these approaches to provide a broader perspective on their trade-offs.  
+
+\paragraph{Assumptions on Data Distribution} \ \
+The study assumes predictor variables follow a normal distribution, whereas real-world data often exhibit skewness, heavy tails, or heteroscedasticity. Since PCR and PLS rely on linear transformations, their performance may degrade under non-Gaussian conditions. Future work could explore robust versions incorporating transformations (e.g., Box-Cox) or heteroscedasticity-aware adaptations.  
+
+\paragraph{Limited Exploration of Nonlinear Relationships} \ \
+PCR and PLS assume linearity between predictors and response variables, limiting their applicability in complex settings like genomics or finance. Nonlinear alternatives, such as Kernel PCA, Kernel PLS, and Deep PLS, could improve predictive power. Future research should evaluate these methods in high-dimensional, nonlinear contexts.  
+
+\subsection{Possible Extensions and Future Research Directions}
+
+\paragraph{Hybrid Approaches Combining PCR and PLS} \ \
+A hybrid model could integrate PCR’s variance-maximizing properties with PLS’s covariance-maximization to enhance predictive performance. Ensemble-based PCR-PLS approaches may further improve regression outcomes.  
+
+\paragraph{Integration with Machine Learning} \ \
+PCR and PLS could be used as feature extraction methods for machine learning models like Random Forests, SVMs, or Neural Networks. Additionally, incorporating PLS-based features into gradient boosting models (e.g., XGBoost, LightGBM) could improve performance in structured data applications.  
+
+\paragraph{Sparse and Robust PLS Variants} \ \
+Sparse PLS (SPLS) introduces sparsity constraints for improved interpretability, while Robust PLS (RPLS) enhances resilience to outliers and non-Gaussian noise. Optimizing these methods for high-dimensional data remains a promising direction.  
+
+\paragraph{Bayesian Extensions} \ \
+Bayesian PCR (BPCR) and Bayesian PLS (BPLS) integrate probabilistic frameworks, improving uncertainty quantification and robustness in small-sample settings. These extensions could be valuable in bioinformatics, finance, and environmental modeling.  
+
+\paragraph{Functional PCR and PLS} \ \
+For time-series, spectral, and medical imaging data, Functional PCR (fPCR) and Functional PLS (fPLS) extend traditional methods to functional data analysis. Future research could apply these approaches in fields like climate modeling and EEG analysis.  
+\newpage
+
 \section{Appendix}
 \subsection{Simulation Results: Classical Dataset (No Multicollinearity}
 
@@ -643,7 +675,7 @@ Additionally, standard regression techniques such as Ordinary Least Squares (OLS
     \label{fig:Classic_data_analysis}
 \end{figure}
 
-\subsection{Simulation Results: Moderate Multicollinearity Datase}
+\subsection{Simulation Results: Moderate Multicollinearity Dataset}
 
 \begin{figure}[H]
     \centering
@@ -781,6 +813,89 @@ Additionally, standard regression techniques such as Ordinary Least Squares (OLS
 \end{table}
 \newpage
 
+\subsection{Definitions and proofs}
+
+\paragraph{Eckart-Young Theorem for Frobenius Norm} \ \
+
+\paragraph{Definition:}
+Let $A \in \mathbb{R}^{m \times n}$ be a real (possibly rectangular) matrix with $m \leq n$. Suppose that the singular value decomposition (SVD) of $A$ is given by:
+\begin{equation}
+    A = U \Sigma V^{\top},
+\end{equation}
+where:
+\begin{itemize}
+    \item $U \in \mathbb{R}^{m \times m}$ and $V \in \mathbb{R}^{n \times n}$ are orthogonal matrices,
+    \item $\Sigma \in \mathbb{R}^{m \times n}$ is a diagonal matrix containing the singular values $\sigma_1 \geq \sigma_2 \geq \dots \geq \sigma_m \geq 0$.
+\end{itemize}
+
+The best rank-$k$ approximation to $A$ in the Frobenius norm, denoted by $\| \cdot \|_F$, is given by:
+\begin{equation}
+    A_k = \sum_{i=1}^{k} \sigma_i u_i v_i^{\top},
+\end{equation}
+where $u_i$ and $v_i$ denote the $i$th columns of $U$ and $V$, respectively.
+
+\paragraph{Proof:}
+First, note that we have:
+\begin{equation}
+    \| A - A_k \|_F^2 = \left\| \sum_{i=k+1}^{n} \sigma_i u_i v_i^{\top} \right\|_F^2.
+\end{equation}
+Using the orthonormality of $u_i$ and $v_i$, this simplifies to:
+\begin{equation}
+    \sum_{i=k+1}^{n} \sigma_i^2.
+\end{equation}
+
+Now, let $B_k = XY^{\top}$ be any rank-$k$ matrix where $X$ and $Y$ have $k$ columns. We need to show that:
+\begin{equation}
+    \| A - A_k \|_F^2 = \sum_{i=k+1}^{n} \sigma_i^2 \leq \| A - B_k \|_F^2.
+\end{equation}
+
+Using the triangle inequality with the spectral norm, if $A = A' + A''$, then:
+\begin{equation}
+    \sigma_1(A) \leq \sigma_1(A') + \sigma_1(A'').
+\end{equation}
+Suppose $A'_k$ and $A''_k$ respectively denote the rank-$k$ approximation to $A'$ and $A''$ obtained via SVD. Then, for any $i,j \geq 1$:
+\begin{equation}
+    \sigma_i(A') + \sigma_j(A'') \geq \sigma_{i+j-1}(A).
+\end{equation}
+
+Since $\sigma_{k+1}(B_k) = 0$, when $A' = A - B_k$ and $A'' = B_k$, we conclude that for $i \geq 1, j = k+1$:
+\begin{equation}
+    \sigma_i(A - B_k) \geq \sigma_{k+i}(A).
+\end{equation}
+
+Thus,
+\begin{equation}
+    \| A - B_k \|_F^2 = \sum_{i=1}^{n} \sigma_i(A - B_k)^2 \geq \sum_{i=k+1}^{n} \sigma_i(A)^2 = \| A - A_k \|_F^2.
+\end{equation}
+
+Therefore, $A_k$ achieves the lowest possible Frobenius norm error, proving that it is the best rank-$k$ approximation. \qed
+
+\paragraph{The Gram-Schmidt Process} \ \
+
+The vector projection of a vector $\mathbf{v}$ on a nonzero vector $\mathbf{u}$ is defined as:
+\[
+\operatorname{proj}_{\mathbf{u}}(\mathbf{v}) = \frac{\langle \mathbf{v}, \mathbf{u} \rangle}{\langle \mathbf{u}, \mathbf{u} \rangle} \mathbf{u},
+\]
+where $\langle \mathbf{v}, \mathbf{u} \rangle$ denotes the inner product of the vectors $\mathbf{u}$ and $\mathbf{v}$. This means that $\operatorname{proj}_{\mathbf{u}}(\mathbf{v})$ is the orthogonal projection of $\mathbf{v}$ onto the line spanned by $\mathbf{u}$. If $\mathbf{u}$ is the zero vector, then $\operatorname{proj}_{\mathbf{u}}(\mathbf{v})$ is defined as the zero vector.
+
+Given $k$ vectors $\mathbf{v}_1, \dots, \mathbf{v}_k$, the Gram--Schmidt process defines the vectors $\mathbf{u}_1, \dots, \mathbf{u}_k$ as follows:
+
+\begin{align*}
+\mathbf{u}_1 &= \mathbf{v}_1, \quad \mathbf{e}_1 = \frac{\mathbf{u}_1}{\|\mathbf{u}_1\|} \\
+\mathbf{u}_2 &= \mathbf{v}_2 - \operatorname{proj}_{\mathbf{u}_1}(\mathbf{v}_2), \quad \mathbf{e}_2 = \frac{\mathbf{u}_2}{\|\mathbf{u}_2\|} \\
+\mathbf{u}_3 &= \mathbf{v}_3 - \operatorname{proj}_{\mathbf{u}_1}(\mathbf{v}_3) - \operatorname{proj}_{\mathbf{u}_2}(\mathbf{v}_3), \quad \mathbf{e}_3 = \frac{\mathbf{u}_3}{\|\mathbf{u}_3\|} \\
+\mathbf{u}_4 &= \mathbf{v}_4 - \operatorname{proj}_{\mathbf{u}_1}(\mathbf{v}_4) - \operatorname{proj}_{\mathbf{u}_2}(\mathbf{v}_4) - \operatorname{proj}_{\mathbf{u}_3}(\mathbf{v}_4), \quad \mathbf{e}_4 = \frac{\mathbf{u}_4}{\|\mathbf{u}_4\|} \\
+& \vdots \\
+\mathbf{u}_k &= \mathbf{v}_k - \sum_{j=1}^{k-1} \operatorname{proj}_{\mathbf{u}_j}(\mathbf{v}_k), \quad \mathbf{e}_k = \frac{\mathbf{u}_k}{\|\mathbf{u}_k\|}.
+\end{align*}
+
+The sequence $\mathbf{u}_1, \dots, \mathbf{u}_k$ forms an orthogonal system, and the normalized vectors $\mathbf{e}_1, \dots, \mathbf{e}_k$ create an orthonormal set. The calculation of $\mathbf{u}_1, \dots, \mathbf{u}_k$ is known as Gram--Schmidt orthogonalization, while computing $\mathbf{e}_1, \dots, \mathbf{e}_k$ is referred to as Gram--Schmidt orthonormalization.
+
+
+
+
+
+\newpage
 \renewcommand\refname {\section {Bibliography}}
 
 \begin{thebibliography}{99}
