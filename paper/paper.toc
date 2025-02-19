@@ -29,3 +29,4 @@
 \contentsline {subsection}{\numberline {5.3}Simulation Results: Severe Multicollinearity with Low Observations}{24}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Analysis of NIR Data: Corn Moisture Prediction Using PLS and PCR}{25}{subsection.5.4}%
 \contentsline {subsection}{\numberline {5.5}Quantitative Results}{27}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Bibliography}{28}{section.6}%
