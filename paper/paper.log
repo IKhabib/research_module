@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.20)  19 FEB 2025 18:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.20)  19 FEB 2025 20:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -713,165 +713,171 @@ File: PCR_Selected_Analysis.png Graphic file (type png)
 Package pdftex.def Info: PCR_Selected_Analysis.png  used on input line 135.
 (pdftex.def)             Requested size: 435.32422pt x 163.24228pt.
  [3 <./PCR_Selected_Analysis.png>] [4]
-<PLS_Selected_Analysis.png, id=150, 1156.32pt x 433.62pt>
+<PLS_Selected_Analysis.png, id=154, 1156.32pt x 433.62pt>
 File: PLS_Selected_Analysis.png Graphic file (type png)
 <use PLS_Selected_Analysis.png>
 Package pdftex.def Info: PLS_Selected_Analysis.png  used on input line 182.
 (pdftex.def)             Requested size: 435.32422pt x 163.24228pt.
- [5 <./PLS_Selected_Analysis.png>] [6] [7] [8]
+ [5 <./PLS_Selected_Analysis.png>]
+Underfull \vbox (badness 1571) has occurred while \output is active []
+
+ [6]
+[7] [8]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-[10] [11] [12] [13] [14]
-<Fifth_plot.png, id=267, 454.8192pt x 338.9463pt>
+Underfull \vbox (badness 7221) has occurred while \output is active []
+
+ [10]
+[11] [12] [13] [14]
+<Fifth_plot.png, id=273, 454.8192pt x 338.9463pt>
 File: Fifth_plot.png Graphic file (type png)
 <use Fifth_plot.png>
 Package pdftex.def Info: Fifth_plot.png  used on input line 519.
 (pdftex.def)             Requested size: 154.78653pt x 115.34883pt.
-<Fifth_plot_second_simulation.png, id=268, 454.8192pt x 338.9463pt>
+<Fifth_plot_second_simulation.png, id=274, 454.8192pt x 338.9463pt>
 File: Fifth_plot_second_simulation.png Graphic file (type png)
 <use Fifth_plot_second_simulation.png>
 Package pdftex.def Info: Fifth_plot_second_simulation.png  used on input line 5
 26.
 (pdftex.def)             Requested size: 154.78653pt x 115.34883pt.
-<Fifth_plot_third_simulation.png, id=269, 454.8192pt x 338.9463pt>
+<Fifth_plot_third_simulation.png, id=275, 454.8192pt x 338.9463pt>
 File: Fifth_plot_third_simulation.png Graphic file (type png)
 <use Fifth_plot_third_simulation.png>
 Package pdftex.def Info: Fifth_plot_third_simulation.png  used on input line 53
 3.
 (pdftex.def)             Requested size: 154.78653pt x 115.34883pt.
- [15 <./Fifth_plot.png> <./Fifth_plot_second_simulation.png> <./Fifth_plot_thir
-d_simulation.png>] [16]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17]
-<NIR_first_plot.png, id=288, 613.0905pt x 397.2441pt>
+Underfull \vbox (badness 3312) has occurred while \output is active []
+
+ [15 <./Fifth_plot.png> <./Fifth_plot_second_simulation.png> <./Fifth_plot_thir
+d_simulation.png>] [16] [17]
+<NIR_first_plot.png, id=293, 613.0905pt x 397.2441pt>
 File: NIR_first_plot.png Graphic file (type png)
 <use NIR_first_plot.png>
-Package pdftex.def Info: NIR_first_plot.png  used on input line 591.
+Package pdftex.def Info: NIR_first_plot.png  used on input line 587.
 (pdftex.def)             Requested size: 435.32422pt x 282.06952pt.
-
-[18 <./NIR_first_plot.png>]
+ [18 <./NIR_first_plot.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
 [20]
-<First_plot.png, id=303, 1011.78pt x 722.7pt>
+<First_plot.png, id=308, 1011.78pt x 722.7pt>
 File: First_plot.png Graphic file (type png)
 <use First_plot.png>
-Package pdftex.def Info: First_plot.png  used on input line 620.
+Package pdftex.def Info: First_plot.png  used on input line 616.
 (pdftex.def)             Requested size: 435.32422pt x 310.95343pt.
-<Second_plot.png, id=304, 723.1818pt x 393.6306pt>
+<Second_plot.png, id=309, 723.1818pt x 393.6306pt>
 File: Second_plot.png Graphic file (type png)
 <use Second_plot.png>
-Package pdftex.def Info: Second_plot.png  used on input line 627.
+Package pdftex.def Info: Second_plot.png  used on input line 623.
 (pdftex.def)             Requested size: 435.32422pt x 236.95499pt.
-<Third_plot.png, id=305, 1040.688pt x 433.62pt>
+<Third_plot.png, id=310, 1040.688pt x 433.62pt>
 File: Third_plot.png Graphic file (type png)
 <use Third_plot.png>
-Package pdftex.def Info: Third_plot.png  used on input line 634.
+Package pdftex.def Info: Third_plot.png  used on input line 630.
 (pdftex.def)             Requested size: 435.32422pt x 181.38472pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21 <./First_plot.png> <./Second_plot.png>]
-<Fourth_plot.png, id=314, 1437.6912pt x 381.8265pt>
+<Fourth_plot.png, id=319, 1437.6912pt x 381.8265pt>
 File: Fourth_plot.png Graphic file (type png)
 <use Fourth_plot.png>
-Package pdftex.def Info: Fourth_plot.png  used on input line 641.
+Package pdftex.def Info: Fourth_plot.png  used on input line 637.
 (pdftex.def)             Requested size: 435.32422pt x 115.60919pt.
-<First_plot_second_simulation.png, id=315, 1011.78pt x 722.7pt>
+<First_plot_second_simulation.png, id=320, 1011.78pt x 722.7pt>
 File: First_plot_second_simulation.png Graphic file (type png)
 <use First_plot_second_simulation.png>
 Package pdftex.def Info: First_plot_second_simulation.png  used on input line 6
-50.
+46.
 (pdftex.def)             Requested size: 435.32422pt x 310.95343pt.
-<Second_plot_second_simulation.png, id=316, 729.4452pt x 393.6306pt>
+<Second_plot_second_simulation.png, id=321, 729.4452pt x 393.6306pt>
 File: Second_plot_second_simulation.png Graphic file (type png)
 <use Second_plot_second_simulation.png>
 Package pdftex.def Info: Second_plot_second_simulation.png  used on input line 
-657.
+653.
 (pdftex.def)             Requested size: 435.32422pt x 234.91284pt.
  [22 <./Third_plot.png> <./Fourth_plot.png> <./First_plot_second_simulation.png
 >]
-<Third_plot_second_simulation.png, id=327, 1040.688pt x 433.62pt>
+<Third_plot_second_simulation.png, id=332, 1040.688pt x 433.62pt>
 File: Third_plot_second_simulation.png Graphic file (type png)
 <use Third_plot_second_simulation.png>
 Package pdftex.def Info: Third_plot_second_simulation.png  used on input line 6
-64.
+60.
 (pdftex.def)             Requested size: 435.32422pt x 181.38472pt.
-<Fourth_plot_second_simulation.png, id=328, 1437.6912pt x 381.8265pt>
+<Fourth_plot_second_simulation.png, id=333, 1437.6912pt x 381.8265pt>
 File: Fourth_plot_second_simulation.png Graphic file (type png)
 <use Fourth_plot_second_simulation.png>
 Package pdftex.def Info: Fourth_plot_second_simulation.png  used on input line 
-671.
+667.
 (pdftex.def)             Requested size: 435.32422pt x 115.60919pt.
-<First_plot_third_simulation.png, id=329, 1011.78pt x 722.7pt>
+<First_plot_third_simulation.png, id=334, 1011.78pt x 722.7pt>
 File: First_plot_third_simulation.png Graphic file (type png)
 <use First_plot_third_simulation.png>
-Package pdftex.def Info: First_plot_third_simulation.png  used on input line 68
-0.
+Package pdftex.def Info: First_plot_third_simulation.png  used on input line 67
+6.
 (pdftex.def)             Requested size: 435.32422pt x 310.95343pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23 <./Second_plot_second_simulation.png> <./Third_plot_second_simulation.png>
  <./Fourth_plot_second_simulation.png>]
-<Second_plot_third_simulation.png, id=341, 713.5458pt x 393.6306pt>
+<Second_plot_third_simulation.png, id=346, 713.5458pt x 393.6306pt>
 File: Second_plot_third_simulation.png Graphic file (type png)
 <use Second_plot_third_simulation.png>
 Package pdftex.def Info: Second_plot_third_simulation.png  used on input line 6
-87.
+83.
 (pdftex.def)             Requested size: 435.32422pt x 240.15034pt.
-<Third_plot_third_simulation.png, id=342, 1040.688pt x 433.62pt>
+<Third_plot_third_simulation.png, id=347, 1040.688pt x 433.62pt>
 File: Third_plot_third_simulation.png Graphic file (type png)
 <use Third_plot_third_simulation.png>
 Package pdftex.def Info: Third_plot_third_simulation.png  used on input line 69
-4.
+0.
 (pdftex.def)             Requested size: 435.32422pt x 181.38472pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [24 <./First_plot_third_simulation.png> <./Second_plot_third_simulation.png>]
-<Fourth_plot_third_simulation.png, id=351, 1437.6912pt x 381.8265pt>
+<Fourth_plot_third_simulation.png, id=356, 1437.6912pt x 381.8265pt>
 File: Fourth_plot_third_simulation.png Graphic file (type png)
 <use Fourth_plot_third_simulation.png>
-Package pdftex.def Info: Fourth_plot_third_simulation.png  used on input line 7
-01.
+Package pdftex.def Info: Fourth_plot_third_simulation.png  used on input line 6
+97.
 (pdftex.def)             Requested size: 435.32422pt x 115.60919pt.
-<NIR_second_plot.png, id=352, 619.3539pt x 397.2441pt>
+<NIR_second_plot.png, id=357, 619.3539pt x 397.2441pt>
 File: NIR_second_plot.png Graphic file (type png)
 <use NIR_second_plot.png>
-Package pdftex.def Info: NIR_second_plot.png  used on input line 710.
+Package pdftex.def Info: NIR_second_plot.png  used on input line 706.
 (pdftex.def)             Requested size: 435.32422pt x 279.20851pt.
-<NIR_third_plot.png, id=353, 619.3539pt x 397.2441pt>
+<NIR_third_plot.png, id=358, 619.3539pt x 397.2441pt>
 File: NIR_third_plot.png Graphic file (type png)
 <use NIR_third_plot.png>
-Package pdftex.def Info: NIR_third_plot.png  used on input line 717.
+Package pdftex.def Info: NIR_third_plot.png  used on input line 713.
 (pdftex.def)             Requested size: 435.32422pt x 279.20851pt.
 
 Underfull \vbox (badness 4229) has occurred while \output is active []
 
  [25 <./Third_plot_third_simulation.png> <./Fourth_plot_third_simulation.png> <
 ./NIR_second_plot.png>]
-<NIR_fifth_plot.png, id=364, 626.34pt x 397.2441pt>
+<NIR_fifth_plot.png, id=369, 626.34pt x 397.2441pt>
 File: NIR_fifth_plot.png Graphic file (type png)
 <use NIR_fifth_plot.png>
-Package pdftex.def Info: NIR_fifth_plot.png  used on input line 724.
+Package pdftex.def Info: NIR_fifth_plot.png  used on input line 720.
 (pdftex.def)             Requested size: 435.32422pt x 276.10506pt.
  [26 <./NIR_third_plot.png> <./NIR_fifth_plot.png>]
-Overfull \hbox (4.08368pt too wide) in paragraph at lines 762--779
+Overfull \hbox (4.08368pt too wide) in paragraph at lines 758--775
  [][] 
  []
 
 [27]
-Underfull \hbox (badness 2205) in paragraph at lines 801--802
+Underfull \hbox (badness 2205) in paragraph at lines 797--798
 []\OT1/cmr/m/n/10.95 (+20) Greenberg, Ed-ward. (1975). Min-i-mum vari-ance prop
 -er-ties of prin-ci-pal com-po-nent re-
  []
 
 
-Underfull \hbox (badness 6252) in paragraph at lines 801--802
+Underfull \hbox (badness 6252) in paragraph at lines 797--798
 \OT1/cmr/m/n/10.95 (+20) gres-sion. \OT1/cmr/m/it/10.95 (+20) Jour-nal of the A
 mer-i-can Sta-tis-ti-cal As-so-ci-a-tion\OT1/cmr/m/n/10.95 (+20) , 70(349), 194
 {197. DOI:
@@ -885,13 +891,13 @@ Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: CE87468D36C6E87616027760C3272024;4674.
  ) 
 Here is how much of TeX's memory you used:
- 15721 strings out of 478268
- 255133 string characters out of 5846346
+ 15751 strings out of 478268
+ 255548 string characters out of 5846346
  609663 words of memory out of 5000000
- 33382 multiletter control sequences out of 15000+600000
- 481278 words of font info for 131 fonts, out of 8000000 for 9000
+ 33401 multiletter control sequences out of 15000+600000
+ 483263 words of font info for 141 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,12n,77p,1481b,569s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 67i,12n,77p,1481b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -900,16 +906,17 @@ usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
 sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
 /local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
 ocal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
-al/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
-texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/tex
-live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
-ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
-e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
-/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on paper.pdf (30 pages, 4073302 bytes).
+al/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
+texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
+live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texliv
+e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
+/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
+022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/20
+22/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on paper.pdf (30 pages, 4083356 bytes).
 PDF statistics:
- 504 PDF objects out of 1000 (max. 8388607)
- 400 compressed objects within 4 object streams
- 169 named destinations out of 1000 (max. 500000)
- 28922 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 514 PDF objects out of 1000 (max. 8388607)
+ 407 compressed objects within 5 object streams
+ 171 named destinations out of 1000 (max. 500000)
+ 30970 words of extra memory for PDF output out of 35830 (max. 10000000)
 
